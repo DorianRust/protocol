@@ -1,0 +1,86 @@
+buildscript {
+    dependencies {
+        classpath 'com.google.protobuf:protobuf-gradle-plugin:0.8.3'
+        classpath 'com.github.jengelman.gradle.plugins:shadow:2.0.2'
+    }
+}
+plugins {
+    id 'java'
+}
+
+group 'org.tron'
+version '1.0.0'
+
+apply plugin: 'java'
+apply plugin: 'com.google.protobuf'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile group: 'com.google.protobuf', name: 'protobuf-java', version: '3.4.0'
+    compile group: 'com.google.protobuf', name: 'protobuf-java-util', version: '3.4.0'
+    compile group: 'io.grpc', name: 'grpc-protobuf', version: '1.14.0'
+    compile group: 'net.jcip', name: 'jcip-annotations', version: '1.0'
+    compile group: 'com.google.api.grpc', name: 'googleapis-common-protos', version: '0.0.3'
+}
+
+task version(type: Exec) {
+    commandLine 'bash', '-c', './ver.sh'
+}
+
+task lint(type: Checkstyle) {
+    // Cleaning the old log because of the creation of the new ones (not sure if totaly needed)
+    delete fileTree(dir: "${project.rootDir}/app/build/reports")
+    source 'src'
+    include '**/*.java'
+    exclude 'main/gen/**'
+    exclude 'test/**'
+    // empty classpath
+    classpath = files()
+    //Failing the build
+    ignoreFailures = false
+}
+
+sourceSets {
+    main {
+        proto {
+            srcDir 'src/main/protos'
+        }
+        java {
+            srcDir 'src/main/gen'
+            srcDir 'src/main/java'
+        }
+    }
+
+}
+
+protobuf {
+    generatedFilesBaseDir = "$projectDir/src/"
+    protoc {
+        artifact = "com.google.protobuf:protoc:3.5.1-1"
+    }
+
+    plugins {
+        grpc {
+            artifact = 'io.grpc:protoc-gen-grpc-java:1.9.0'
+        }
+    }
+    generateProtoTasks {
+        all().each { task ->
+            task.builtins {
+                java { outputSubDir = "gen" }
+            }
+        }
+        all()*.plugins {
+            grpc {
+                outputSubDir = "gen"
+            }
+        }
+    }
+}
+
