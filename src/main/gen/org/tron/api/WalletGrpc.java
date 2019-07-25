@@ -3067,6 +3067,582 @@ public final class WalletGrpc {
      }
      return getGetNodeInfoMethod;
   }
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getCreateShieldedTransactionMethod()} instead. 
+  public static final io.grpc.MethodDescriptor<org.tron.api.GrpcAPI.PrivateParameters,
+      org.tron.api.GrpcAPI.TransactionExtention> METHOD_CREATE_SHIELDED_TRANSACTION = getCreateShieldedTransactionMethod();
+
+  private static volatile io.grpc.MethodDescriptor<org.tron.api.GrpcAPI.PrivateParameters,
+      org.tron.api.GrpcAPI.TransactionExtention> getCreateShieldedTransactionMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<org.tron.api.GrpcAPI.PrivateParameters,
+      org.tron.api.GrpcAPI.TransactionExtention> getCreateShieldedTransactionMethod() {
+    io.grpc.MethodDescriptor<org.tron.api.GrpcAPI.PrivateParameters, org.tron.api.GrpcAPI.TransactionExtention> getCreateShieldedTransactionMethod;
+    if ((getCreateShieldedTransactionMethod = WalletGrpc.getCreateShieldedTransactionMethod) == null) {
+      synchronized (WalletGrpc.class) {
+        if ((getCreateShieldedTransactionMethod = WalletGrpc.getCreateShieldedTransactionMethod) == null) {
+          WalletGrpc.getCreateShieldedTransactionMethod = getCreateShieldedTransactionMethod = 
+              io.grpc.MethodDescriptor.<org.tron.api.GrpcAPI.PrivateParameters, org.tron.api.GrpcAPI.TransactionExtention>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "protocol.Wallet", "CreateShieldedTransaction"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.tron.api.GrpcAPI.PrivateParameters.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.tron.api.GrpcAPI.TransactionExtention.getDefaultInstance()))
+                  .setSchemaDescriptor(new WalletMethodDescriptorSupplier("CreateShieldedTransaction"))
+                  .build();
+          }
+        }
+     }
+     return getCreateShieldedTransactionMethod;
+  }
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getGetMerkleTreeVoucherInfoMethod()} instead. 
+  public static final io.grpc.MethodDescriptor<org.tron.protos.Contract.OutputPointInfo,
+      org.tron.protos.Contract.IncrementalMerkleVoucherInfo> METHOD_GET_MERKLE_TREE_VOUCHER_INFO = getGetMerkleTreeVoucherInfoMethod();
+
+  private static volatile io.grpc.MethodDescriptor<org.tron.protos.Contract.OutputPointInfo,
+      org.tron.protos.Contract.IncrementalMerkleVoucherInfo> getGetMerkleTreeVoucherInfoMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<org.tron.protos.Contract.OutputPointInfo,
+      org.tron.protos.Contract.IncrementalMerkleVoucherInfo> getGetMerkleTreeVoucherInfoMethod() {
+    io.grpc.MethodDescriptor<org.tron.protos.Contract.OutputPointInfo, org.tron.protos.Contract.IncrementalMerkleVoucherInfo> getGetMerkleTreeVoucherInfoMethod;
+    if ((getGetMerkleTreeVoucherInfoMethod = WalletGrpc.getGetMerkleTreeVoucherInfoMethod) == null) {
+      synchronized (WalletGrpc.class) {
+        if ((getGetMerkleTreeVoucherInfoMethod = WalletGrpc.getGetMerkleTreeVoucherInfoMethod) == null) {
+          WalletGrpc.getGetMerkleTreeVoucherInfoMethod = getGetMerkleTreeVoucherInfoMethod = 
+              io.grpc.MethodDescriptor.<org.tron.protos.Contract.OutputPointInfo, org.tron.protos.Contract.IncrementalMerkleVoucherInfo>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "protocol.Wallet", "GetMerkleTreeVoucherInfo"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.tron.protos.Contract.OutputPointInfo.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.tron.protos.Contract.IncrementalMerkleVoucherInfo.getDefaultInstance()))
+                  .setSchemaDescriptor(new WalletMethodDescriptorSupplier("GetMerkleTreeVoucherInfo"))
+                  .build();
+          }
+        }
+     }
+     return getGetMerkleTreeVoucherInfoMethod;
+  }
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getScanNoteByIvkMethod()} instead. 
+  public static final io.grpc.MethodDescriptor<org.tron.api.GrpcAPI.IvkDecryptParameters,
+      org.tron.api.GrpcAPI.DecryptNotes> METHOD_SCAN_NOTE_BY_IVK = getScanNoteByIvkMethod();
+
+  private static volatile io.grpc.MethodDescriptor<org.tron.api.GrpcAPI.IvkDecryptParameters,
+      org.tron.api.GrpcAPI.DecryptNotes> getScanNoteByIvkMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<org.tron.api.GrpcAPI.IvkDecryptParameters,
+      org.tron.api.GrpcAPI.DecryptNotes> getScanNoteByIvkMethod() {
+    io.grpc.MethodDescriptor<org.tron.api.GrpcAPI.IvkDecryptParameters, org.tron.api.GrpcAPI.DecryptNotes> getScanNoteByIvkMethod;
+    if ((getScanNoteByIvkMethod = WalletGrpc.getScanNoteByIvkMethod) == null) {
+      synchronized (WalletGrpc.class) {
+        if ((getScanNoteByIvkMethod = WalletGrpc.getScanNoteByIvkMethod) == null) {
+          WalletGrpc.getScanNoteByIvkMethod = getScanNoteByIvkMethod = 
+              io.grpc.MethodDescriptor.<org.tron.api.GrpcAPI.IvkDecryptParameters, org.tron.api.GrpcAPI.DecryptNotes>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "protocol.Wallet", "ScanNoteByIvk"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.tron.api.GrpcAPI.IvkDecryptParameters.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.tron.api.GrpcAPI.DecryptNotes.getDefaultInstance()))
+                  .setSchemaDescriptor(new WalletMethodDescriptorSupplier("ScanNoteByIvk"))
+                  .build();
+          }
+        }
+     }
+     return getScanNoteByIvkMethod;
+  }
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getScanAndMarkNoteByIvkMethod()} instead. 
+  public static final io.grpc.MethodDescriptor<org.tron.api.GrpcAPI.IvkDecryptAndMarkParameters,
+      org.tron.api.GrpcAPI.DecryptNotesMarked> METHOD_SCAN_AND_MARK_NOTE_BY_IVK = getScanAndMarkNoteByIvkMethod();
+
+  private static volatile io.grpc.MethodDescriptor<org.tron.api.GrpcAPI.IvkDecryptAndMarkParameters,
+      org.tron.api.GrpcAPI.DecryptNotesMarked> getScanAndMarkNoteByIvkMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<org.tron.api.GrpcAPI.IvkDecryptAndMarkParameters,
+      org.tron.api.GrpcAPI.DecryptNotesMarked> getScanAndMarkNoteByIvkMethod() {
+    io.grpc.MethodDescriptor<org.tron.api.GrpcAPI.IvkDecryptAndMarkParameters, org.tron.api.GrpcAPI.DecryptNotesMarked> getScanAndMarkNoteByIvkMethod;
+    if ((getScanAndMarkNoteByIvkMethod = WalletGrpc.getScanAndMarkNoteByIvkMethod) == null) {
+      synchronized (WalletGrpc.class) {
+        if ((getScanAndMarkNoteByIvkMethod = WalletGrpc.getScanAndMarkNoteByIvkMethod) == null) {
+          WalletGrpc.getScanAndMarkNoteByIvkMethod = getScanAndMarkNoteByIvkMethod = 
+              io.grpc.MethodDescriptor.<org.tron.api.GrpcAPI.IvkDecryptAndMarkParameters, org.tron.api.GrpcAPI.DecryptNotesMarked>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "protocol.Wallet", "ScanAndMarkNoteByIvk"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.tron.api.GrpcAPI.IvkDecryptAndMarkParameters.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.tron.api.GrpcAPI.DecryptNotesMarked.getDefaultInstance()))
+                  .setSchemaDescriptor(new WalletMethodDescriptorSupplier("ScanAndMarkNoteByIvk"))
+                  .build();
+          }
+        }
+     }
+     return getScanAndMarkNoteByIvkMethod;
+  }
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getScanNoteByOvkMethod()} instead. 
+  public static final io.grpc.MethodDescriptor<org.tron.api.GrpcAPI.OvkDecryptParameters,
+      org.tron.api.GrpcAPI.DecryptNotes> METHOD_SCAN_NOTE_BY_OVK = getScanNoteByOvkMethod();
+
+  private static volatile io.grpc.MethodDescriptor<org.tron.api.GrpcAPI.OvkDecryptParameters,
+      org.tron.api.GrpcAPI.DecryptNotes> getScanNoteByOvkMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<org.tron.api.GrpcAPI.OvkDecryptParameters,
+      org.tron.api.GrpcAPI.DecryptNotes> getScanNoteByOvkMethod() {
+    io.grpc.MethodDescriptor<org.tron.api.GrpcAPI.OvkDecryptParameters, org.tron.api.GrpcAPI.DecryptNotes> getScanNoteByOvkMethod;
+    if ((getScanNoteByOvkMethod = WalletGrpc.getScanNoteByOvkMethod) == null) {
+      synchronized (WalletGrpc.class) {
+        if ((getScanNoteByOvkMethod = WalletGrpc.getScanNoteByOvkMethod) == null) {
+          WalletGrpc.getScanNoteByOvkMethod = getScanNoteByOvkMethod = 
+              io.grpc.MethodDescriptor.<org.tron.api.GrpcAPI.OvkDecryptParameters, org.tron.api.GrpcAPI.DecryptNotes>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "protocol.Wallet", "ScanNoteByOvk"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.tron.api.GrpcAPI.OvkDecryptParameters.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.tron.api.GrpcAPI.DecryptNotes.getDefaultInstance()))
+                  .setSchemaDescriptor(new WalletMethodDescriptorSupplier("ScanNoteByOvk"))
+                  .build();
+          }
+        }
+     }
+     return getScanNoteByOvkMethod;
+  }
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getGetSpendingKeyMethod()} instead. 
+  public static final io.grpc.MethodDescriptor<org.tron.api.GrpcAPI.EmptyMessage,
+      org.tron.api.GrpcAPI.BytesMessage> METHOD_GET_SPENDING_KEY = getGetSpendingKeyMethod();
+
+  private static volatile io.grpc.MethodDescriptor<org.tron.api.GrpcAPI.EmptyMessage,
+      org.tron.api.GrpcAPI.BytesMessage> getGetSpendingKeyMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<org.tron.api.GrpcAPI.EmptyMessage,
+      org.tron.api.GrpcAPI.BytesMessage> getGetSpendingKeyMethod() {
+    io.grpc.MethodDescriptor<org.tron.api.GrpcAPI.EmptyMessage, org.tron.api.GrpcAPI.BytesMessage> getGetSpendingKeyMethod;
+    if ((getGetSpendingKeyMethod = WalletGrpc.getGetSpendingKeyMethod) == null) {
+      synchronized (WalletGrpc.class) {
+        if ((getGetSpendingKeyMethod = WalletGrpc.getGetSpendingKeyMethod) == null) {
+          WalletGrpc.getGetSpendingKeyMethod = getGetSpendingKeyMethod = 
+              io.grpc.MethodDescriptor.<org.tron.api.GrpcAPI.EmptyMessage, org.tron.api.GrpcAPI.BytesMessage>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "protocol.Wallet", "GetSpendingKey"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.tron.api.GrpcAPI.EmptyMessage.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.tron.api.GrpcAPI.BytesMessage.getDefaultInstance()))
+                  .setSchemaDescriptor(new WalletMethodDescriptorSupplier("GetSpendingKey"))
+                  .build();
+          }
+        }
+     }
+     return getGetSpendingKeyMethod;
+  }
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getGetExpandedSpendingKeyMethod()} instead. 
+  public static final io.grpc.MethodDescriptor<org.tron.api.GrpcAPI.BytesMessage,
+      org.tron.api.GrpcAPI.ExpandedSpendingKeyMessage> METHOD_GET_EXPANDED_SPENDING_KEY = getGetExpandedSpendingKeyMethod();
+
+  private static volatile io.grpc.MethodDescriptor<org.tron.api.GrpcAPI.BytesMessage,
+      org.tron.api.GrpcAPI.ExpandedSpendingKeyMessage> getGetExpandedSpendingKeyMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<org.tron.api.GrpcAPI.BytesMessage,
+      org.tron.api.GrpcAPI.ExpandedSpendingKeyMessage> getGetExpandedSpendingKeyMethod() {
+    io.grpc.MethodDescriptor<org.tron.api.GrpcAPI.BytesMessage, org.tron.api.GrpcAPI.ExpandedSpendingKeyMessage> getGetExpandedSpendingKeyMethod;
+    if ((getGetExpandedSpendingKeyMethod = WalletGrpc.getGetExpandedSpendingKeyMethod) == null) {
+      synchronized (WalletGrpc.class) {
+        if ((getGetExpandedSpendingKeyMethod = WalletGrpc.getGetExpandedSpendingKeyMethod) == null) {
+          WalletGrpc.getGetExpandedSpendingKeyMethod = getGetExpandedSpendingKeyMethod = 
+              io.grpc.MethodDescriptor.<org.tron.api.GrpcAPI.BytesMessage, org.tron.api.GrpcAPI.ExpandedSpendingKeyMessage>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "protocol.Wallet", "GetExpandedSpendingKey"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.tron.api.GrpcAPI.BytesMessage.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.tron.api.GrpcAPI.ExpandedSpendingKeyMessage.getDefaultInstance()))
+                  .setSchemaDescriptor(new WalletMethodDescriptorSupplier("GetExpandedSpendingKey"))
+                  .build();
+          }
+        }
+     }
+     return getGetExpandedSpendingKeyMethod;
+  }
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getGetAkFromAskMethod()} instead. 
+  public static final io.grpc.MethodDescriptor<org.tron.api.GrpcAPI.BytesMessage,
+      org.tron.api.GrpcAPI.BytesMessage> METHOD_GET_AK_FROM_ASK = getGetAkFromAskMethod();
+
+  private static volatile io.grpc.MethodDescriptor<org.tron.api.GrpcAPI.BytesMessage,
+      org.tron.api.GrpcAPI.BytesMessage> getGetAkFromAskMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<org.tron.api.GrpcAPI.BytesMessage,
+      org.tron.api.GrpcAPI.BytesMessage> getGetAkFromAskMethod() {
+    io.grpc.MethodDescriptor<org.tron.api.GrpcAPI.BytesMessage, org.tron.api.GrpcAPI.BytesMessage> getGetAkFromAskMethod;
+    if ((getGetAkFromAskMethod = WalletGrpc.getGetAkFromAskMethod) == null) {
+      synchronized (WalletGrpc.class) {
+        if ((getGetAkFromAskMethod = WalletGrpc.getGetAkFromAskMethod) == null) {
+          WalletGrpc.getGetAkFromAskMethod = getGetAkFromAskMethod = 
+              io.grpc.MethodDescriptor.<org.tron.api.GrpcAPI.BytesMessage, org.tron.api.GrpcAPI.BytesMessage>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "protocol.Wallet", "GetAkFromAsk"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.tron.api.GrpcAPI.BytesMessage.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.tron.api.GrpcAPI.BytesMessage.getDefaultInstance()))
+                  .setSchemaDescriptor(new WalletMethodDescriptorSupplier("GetAkFromAsk"))
+                  .build();
+          }
+        }
+     }
+     return getGetAkFromAskMethod;
+  }
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getGetNkFromNskMethod()} instead. 
+  public static final io.grpc.MethodDescriptor<org.tron.api.GrpcAPI.BytesMessage,
+      org.tron.api.GrpcAPI.BytesMessage> METHOD_GET_NK_FROM_NSK = getGetNkFromNskMethod();
+
+  private static volatile io.grpc.MethodDescriptor<org.tron.api.GrpcAPI.BytesMessage,
+      org.tron.api.GrpcAPI.BytesMessage> getGetNkFromNskMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<org.tron.api.GrpcAPI.BytesMessage,
+      org.tron.api.GrpcAPI.BytesMessage> getGetNkFromNskMethod() {
+    io.grpc.MethodDescriptor<org.tron.api.GrpcAPI.BytesMessage, org.tron.api.GrpcAPI.BytesMessage> getGetNkFromNskMethod;
+    if ((getGetNkFromNskMethod = WalletGrpc.getGetNkFromNskMethod) == null) {
+      synchronized (WalletGrpc.class) {
+        if ((getGetNkFromNskMethod = WalletGrpc.getGetNkFromNskMethod) == null) {
+          WalletGrpc.getGetNkFromNskMethod = getGetNkFromNskMethod = 
+              io.grpc.MethodDescriptor.<org.tron.api.GrpcAPI.BytesMessage, org.tron.api.GrpcAPI.BytesMessage>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "protocol.Wallet", "GetNkFromNsk"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.tron.api.GrpcAPI.BytesMessage.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.tron.api.GrpcAPI.BytesMessage.getDefaultInstance()))
+                  .setSchemaDescriptor(new WalletMethodDescriptorSupplier("GetNkFromNsk"))
+                  .build();
+          }
+        }
+     }
+     return getGetNkFromNskMethod;
+  }
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getGetIncomingViewingKeyMethod()} instead. 
+  public static final io.grpc.MethodDescriptor<org.tron.api.GrpcAPI.ViewingKeyMessage,
+      org.tron.api.GrpcAPI.IncomingViewingKeyMessage> METHOD_GET_INCOMING_VIEWING_KEY = getGetIncomingViewingKeyMethod();
+
+  private static volatile io.grpc.MethodDescriptor<org.tron.api.GrpcAPI.ViewingKeyMessage,
+      org.tron.api.GrpcAPI.IncomingViewingKeyMessage> getGetIncomingViewingKeyMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<org.tron.api.GrpcAPI.ViewingKeyMessage,
+      org.tron.api.GrpcAPI.IncomingViewingKeyMessage> getGetIncomingViewingKeyMethod() {
+    io.grpc.MethodDescriptor<org.tron.api.GrpcAPI.ViewingKeyMessage, org.tron.api.GrpcAPI.IncomingViewingKeyMessage> getGetIncomingViewingKeyMethod;
+    if ((getGetIncomingViewingKeyMethod = WalletGrpc.getGetIncomingViewingKeyMethod) == null) {
+      synchronized (WalletGrpc.class) {
+        if ((getGetIncomingViewingKeyMethod = WalletGrpc.getGetIncomingViewingKeyMethod) == null) {
+          WalletGrpc.getGetIncomingViewingKeyMethod = getGetIncomingViewingKeyMethod = 
+              io.grpc.MethodDescriptor.<org.tron.api.GrpcAPI.ViewingKeyMessage, org.tron.api.GrpcAPI.IncomingViewingKeyMessage>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "protocol.Wallet", "GetIncomingViewingKey"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.tron.api.GrpcAPI.ViewingKeyMessage.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.tron.api.GrpcAPI.IncomingViewingKeyMessage.getDefaultInstance()))
+                  .setSchemaDescriptor(new WalletMethodDescriptorSupplier("GetIncomingViewingKey"))
+                  .build();
+          }
+        }
+     }
+     return getGetIncomingViewingKeyMethod;
+  }
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getGetDiversifierMethod()} instead. 
+  public static final io.grpc.MethodDescriptor<org.tron.api.GrpcAPI.EmptyMessage,
+      org.tron.api.GrpcAPI.DiversifierMessage> METHOD_GET_DIVERSIFIER = getGetDiversifierMethod();
+
+  private static volatile io.grpc.MethodDescriptor<org.tron.api.GrpcAPI.EmptyMessage,
+      org.tron.api.GrpcAPI.DiversifierMessage> getGetDiversifierMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<org.tron.api.GrpcAPI.EmptyMessage,
+      org.tron.api.GrpcAPI.DiversifierMessage> getGetDiversifierMethod() {
+    io.grpc.MethodDescriptor<org.tron.api.GrpcAPI.EmptyMessage, org.tron.api.GrpcAPI.DiversifierMessage> getGetDiversifierMethod;
+    if ((getGetDiversifierMethod = WalletGrpc.getGetDiversifierMethod) == null) {
+      synchronized (WalletGrpc.class) {
+        if ((getGetDiversifierMethod = WalletGrpc.getGetDiversifierMethod) == null) {
+          WalletGrpc.getGetDiversifierMethod = getGetDiversifierMethod = 
+              io.grpc.MethodDescriptor.<org.tron.api.GrpcAPI.EmptyMessage, org.tron.api.GrpcAPI.DiversifierMessage>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "protocol.Wallet", "GetDiversifier"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.tron.api.GrpcAPI.EmptyMessage.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.tron.api.GrpcAPI.DiversifierMessage.getDefaultInstance()))
+                  .setSchemaDescriptor(new WalletMethodDescriptorSupplier("GetDiversifier"))
+                  .build();
+          }
+        }
+     }
+     return getGetDiversifierMethod;
+  }
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getGetZenPaymentAddressMethod()} instead. 
+  public static final io.grpc.MethodDescriptor<org.tron.api.GrpcAPI.IncomingViewingKeyDiversifierMessage,
+      org.tron.api.GrpcAPI.PaymentAddressMessage> METHOD_GET_ZEN_PAYMENT_ADDRESS = getGetZenPaymentAddressMethod();
+
+  private static volatile io.grpc.MethodDescriptor<org.tron.api.GrpcAPI.IncomingViewingKeyDiversifierMessage,
+      org.tron.api.GrpcAPI.PaymentAddressMessage> getGetZenPaymentAddressMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<org.tron.api.GrpcAPI.IncomingViewingKeyDiversifierMessage,
+      org.tron.api.GrpcAPI.PaymentAddressMessage> getGetZenPaymentAddressMethod() {
+    io.grpc.MethodDescriptor<org.tron.api.GrpcAPI.IncomingViewingKeyDiversifierMessage, org.tron.api.GrpcAPI.PaymentAddressMessage> getGetZenPaymentAddressMethod;
+    if ((getGetZenPaymentAddressMethod = WalletGrpc.getGetZenPaymentAddressMethod) == null) {
+      synchronized (WalletGrpc.class) {
+        if ((getGetZenPaymentAddressMethod = WalletGrpc.getGetZenPaymentAddressMethod) == null) {
+          WalletGrpc.getGetZenPaymentAddressMethod = getGetZenPaymentAddressMethod = 
+              io.grpc.MethodDescriptor.<org.tron.api.GrpcAPI.IncomingViewingKeyDiversifierMessage, org.tron.api.GrpcAPI.PaymentAddressMessage>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "protocol.Wallet", "GetZenPaymentAddress"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.tron.api.GrpcAPI.IncomingViewingKeyDiversifierMessage.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.tron.api.GrpcAPI.PaymentAddressMessage.getDefaultInstance()))
+                  .setSchemaDescriptor(new WalletMethodDescriptorSupplier("GetZenPaymentAddress"))
+                  .build();
+          }
+        }
+     }
+     return getGetZenPaymentAddressMethod;
+  }
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getGetRcmMethod()} instead. 
+  public static final io.grpc.MethodDescriptor<org.tron.api.GrpcAPI.EmptyMessage,
+      org.tron.api.GrpcAPI.BytesMessage> METHOD_GET_RCM = getGetRcmMethod();
+
+  private static volatile io.grpc.MethodDescriptor<org.tron.api.GrpcAPI.EmptyMessage,
+      org.tron.api.GrpcAPI.BytesMessage> getGetRcmMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<org.tron.api.GrpcAPI.EmptyMessage,
+      org.tron.api.GrpcAPI.BytesMessage> getGetRcmMethod() {
+    io.grpc.MethodDescriptor<org.tron.api.GrpcAPI.EmptyMessage, org.tron.api.GrpcAPI.BytesMessage> getGetRcmMethod;
+    if ((getGetRcmMethod = WalletGrpc.getGetRcmMethod) == null) {
+      synchronized (WalletGrpc.class) {
+        if ((getGetRcmMethod = WalletGrpc.getGetRcmMethod) == null) {
+          WalletGrpc.getGetRcmMethod = getGetRcmMethod = 
+              io.grpc.MethodDescriptor.<org.tron.api.GrpcAPI.EmptyMessage, org.tron.api.GrpcAPI.BytesMessage>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "protocol.Wallet", "GetRcm"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.tron.api.GrpcAPI.EmptyMessage.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.tron.api.GrpcAPI.BytesMessage.getDefaultInstance()))
+                  .setSchemaDescriptor(new WalletMethodDescriptorSupplier("GetRcm"))
+                  .build();
+          }
+        }
+     }
+     return getGetRcmMethod;
+  }
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getIsSpendMethod()} instead. 
+  public static final io.grpc.MethodDescriptor<org.tron.api.GrpcAPI.NoteParameters,
+      org.tron.api.GrpcAPI.SpendResult> METHOD_IS_SPEND = getIsSpendMethod();
+
+  private static volatile io.grpc.MethodDescriptor<org.tron.api.GrpcAPI.NoteParameters,
+      org.tron.api.GrpcAPI.SpendResult> getIsSpendMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<org.tron.api.GrpcAPI.NoteParameters,
+      org.tron.api.GrpcAPI.SpendResult> getIsSpendMethod() {
+    io.grpc.MethodDescriptor<org.tron.api.GrpcAPI.NoteParameters, org.tron.api.GrpcAPI.SpendResult> getIsSpendMethod;
+    if ((getIsSpendMethod = WalletGrpc.getIsSpendMethod) == null) {
+      synchronized (WalletGrpc.class) {
+        if ((getIsSpendMethod = WalletGrpc.getIsSpendMethod) == null) {
+          WalletGrpc.getIsSpendMethod = getIsSpendMethod = 
+              io.grpc.MethodDescriptor.<org.tron.api.GrpcAPI.NoteParameters, org.tron.api.GrpcAPI.SpendResult>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "protocol.Wallet", "IsSpend"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.tron.api.GrpcAPI.NoteParameters.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.tron.api.GrpcAPI.SpendResult.getDefaultInstance()))
+                  .setSchemaDescriptor(new WalletMethodDescriptorSupplier("IsSpend"))
+                  .build();
+          }
+        }
+     }
+     return getIsSpendMethod;
+  }
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getCreateShieldedTransactionWithoutSpendAuthSigMethod()} instead. 
+  public static final io.grpc.MethodDescriptor<org.tron.api.GrpcAPI.PrivateParametersWithoutAsk,
+      org.tron.api.GrpcAPI.TransactionExtention> METHOD_CREATE_SHIELDED_TRANSACTION_WITHOUT_SPEND_AUTH_SIG = getCreateShieldedTransactionWithoutSpendAuthSigMethod();
+
+  private static volatile io.grpc.MethodDescriptor<org.tron.api.GrpcAPI.PrivateParametersWithoutAsk,
+      org.tron.api.GrpcAPI.TransactionExtention> getCreateShieldedTransactionWithoutSpendAuthSigMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<org.tron.api.GrpcAPI.PrivateParametersWithoutAsk,
+      org.tron.api.GrpcAPI.TransactionExtention> getCreateShieldedTransactionWithoutSpendAuthSigMethod() {
+    io.grpc.MethodDescriptor<org.tron.api.GrpcAPI.PrivateParametersWithoutAsk, org.tron.api.GrpcAPI.TransactionExtention> getCreateShieldedTransactionWithoutSpendAuthSigMethod;
+    if ((getCreateShieldedTransactionWithoutSpendAuthSigMethod = WalletGrpc.getCreateShieldedTransactionWithoutSpendAuthSigMethod) == null) {
+      synchronized (WalletGrpc.class) {
+        if ((getCreateShieldedTransactionWithoutSpendAuthSigMethod = WalletGrpc.getCreateShieldedTransactionWithoutSpendAuthSigMethod) == null) {
+          WalletGrpc.getCreateShieldedTransactionWithoutSpendAuthSigMethod = getCreateShieldedTransactionWithoutSpendAuthSigMethod = 
+              io.grpc.MethodDescriptor.<org.tron.api.GrpcAPI.PrivateParametersWithoutAsk, org.tron.api.GrpcAPI.TransactionExtention>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "protocol.Wallet", "CreateShieldedTransactionWithoutSpendAuthSig"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.tron.api.GrpcAPI.PrivateParametersWithoutAsk.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.tron.api.GrpcAPI.TransactionExtention.getDefaultInstance()))
+                  .setSchemaDescriptor(new WalletMethodDescriptorSupplier("CreateShieldedTransactionWithoutSpendAuthSig"))
+                  .build();
+          }
+        }
+     }
+     return getCreateShieldedTransactionWithoutSpendAuthSigMethod;
+  }
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getGetShieldTransactionHashMethod()} instead. 
+  public static final io.grpc.MethodDescriptor<org.tron.protos.Protocol.Transaction,
+      org.tron.api.GrpcAPI.BytesMessage> METHOD_GET_SHIELD_TRANSACTION_HASH = getGetShieldTransactionHashMethod();
+
+  private static volatile io.grpc.MethodDescriptor<org.tron.protos.Protocol.Transaction,
+      org.tron.api.GrpcAPI.BytesMessage> getGetShieldTransactionHashMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<org.tron.protos.Protocol.Transaction,
+      org.tron.api.GrpcAPI.BytesMessage> getGetShieldTransactionHashMethod() {
+    io.grpc.MethodDescriptor<org.tron.protos.Protocol.Transaction, org.tron.api.GrpcAPI.BytesMessage> getGetShieldTransactionHashMethod;
+    if ((getGetShieldTransactionHashMethod = WalletGrpc.getGetShieldTransactionHashMethod) == null) {
+      synchronized (WalletGrpc.class) {
+        if ((getGetShieldTransactionHashMethod = WalletGrpc.getGetShieldTransactionHashMethod) == null) {
+          WalletGrpc.getGetShieldTransactionHashMethod = getGetShieldTransactionHashMethod = 
+              io.grpc.MethodDescriptor.<org.tron.protos.Protocol.Transaction, org.tron.api.GrpcAPI.BytesMessage>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "protocol.Wallet", "GetShieldTransactionHash"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.tron.protos.Protocol.Transaction.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.tron.api.GrpcAPI.BytesMessage.getDefaultInstance()))
+                  .setSchemaDescriptor(new WalletMethodDescriptorSupplier("GetShieldTransactionHash"))
+                  .build();
+          }
+        }
+     }
+     return getGetShieldTransactionHashMethod;
+  }
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getCreateSpendAuthSigMethod()} instead. 
+  public static final io.grpc.MethodDescriptor<org.tron.api.GrpcAPI.SpendAuthSigParameters,
+      org.tron.api.GrpcAPI.BytesMessage> METHOD_CREATE_SPEND_AUTH_SIG = getCreateSpendAuthSigMethod();
+
+  private static volatile io.grpc.MethodDescriptor<org.tron.api.GrpcAPI.SpendAuthSigParameters,
+      org.tron.api.GrpcAPI.BytesMessage> getCreateSpendAuthSigMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<org.tron.api.GrpcAPI.SpendAuthSigParameters,
+      org.tron.api.GrpcAPI.BytesMessage> getCreateSpendAuthSigMethod() {
+    io.grpc.MethodDescriptor<org.tron.api.GrpcAPI.SpendAuthSigParameters, org.tron.api.GrpcAPI.BytesMessage> getCreateSpendAuthSigMethod;
+    if ((getCreateSpendAuthSigMethod = WalletGrpc.getCreateSpendAuthSigMethod) == null) {
+      synchronized (WalletGrpc.class) {
+        if ((getCreateSpendAuthSigMethod = WalletGrpc.getCreateSpendAuthSigMethod) == null) {
+          WalletGrpc.getCreateSpendAuthSigMethod = getCreateSpendAuthSigMethod = 
+              io.grpc.MethodDescriptor.<org.tron.api.GrpcAPI.SpendAuthSigParameters, org.tron.api.GrpcAPI.BytesMessage>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "protocol.Wallet", "CreateSpendAuthSig"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.tron.api.GrpcAPI.SpendAuthSigParameters.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.tron.api.GrpcAPI.BytesMessage.getDefaultInstance()))
+                  .setSchemaDescriptor(new WalletMethodDescriptorSupplier("CreateSpendAuthSig"))
+                  .build();
+          }
+        }
+     }
+     return getCreateSpendAuthSigMethod;
+  }
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getCreateShieldNullifierMethod()} instead. 
+  public static final io.grpc.MethodDescriptor<org.tron.api.GrpcAPI.NfParameters,
+      org.tron.api.GrpcAPI.BytesMessage> METHOD_CREATE_SHIELD_NULLIFIER = getCreateShieldNullifierMethod();
+
+  private static volatile io.grpc.MethodDescriptor<org.tron.api.GrpcAPI.NfParameters,
+      org.tron.api.GrpcAPI.BytesMessage> getCreateShieldNullifierMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<org.tron.api.GrpcAPI.NfParameters,
+      org.tron.api.GrpcAPI.BytesMessage> getCreateShieldNullifierMethod() {
+    io.grpc.MethodDescriptor<org.tron.api.GrpcAPI.NfParameters, org.tron.api.GrpcAPI.BytesMessage> getCreateShieldNullifierMethod;
+    if ((getCreateShieldNullifierMethod = WalletGrpc.getCreateShieldNullifierMethod) == null) {
+      synchronized (WalletGrpc.class) {
+        if ((getCreateShieldNullifierMethod = WalletGrpc.getCreateShieldNullifierMethod) == null) {
+          WalletGrpc.getCreateShieldNullifierMethod = getCreateShieldNullifierMethod = 
+              io.grpc.MethodDescriptor.<org.tron.api.GrpcAPI.NfParameters, org.tron.api.GrpcAPI.BytesMessage>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "protocol.Wallet", "CreateShieldNullifier"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.tron.api.GrpcAPI.NfParameters.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.tron.api.GrpcAPI.BytesMessage.getDefaultInstance()))
+                  .setSchemaDescriptor(new WalletMethodDescriptorSupplier("CreateShieldNullifier"))
+                  .build();
+          }
+        }
+     }
+     return getCreateShieldNullifierMethod;
+  }
 
   /**
    * Creates a new async stub that supports all call types for the service
@@ -3900,6 +4476,135 @@ public final class WalletGrpc {
       asyncUnimplementedUnaryCall(getGetNodeInfoMethod(), responseObserver);
     }
 
+    /**
+     * <pre>
+     * for shiededTransaction
+     * </pre>
+     */
+    public void createShieldedTransaction(org.tron.api.GrpcAPI.PrivateParameters request,
+        io.grpc.stub.StreamObserver<org.tron.api.GrpcAPI.TransactionExtention> responseObserver) {
+      asyncUnimplementedUnaryCall(getCreateShieldedTransactionMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void getMerkleTreeVoucherInfo(org.tron.protos.Contract.OutputPointInfo request,
+        io.grpc.stub.StreamObserver<org.tron.protos.Contract.IncrementalMerkleVoucherInfo> responseObserver) {
+      asyncUnimplementedUnaryCall(getGetMerkleTreeVoucherInfoMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void scanNoteByIvk(org.tron.api.GrpcAPI.IvkDecryptParameters request,
+        io.grpc.stub.StreamObserver<org.tron.api.GrpcAPI.DecryptNotes> responseObserver) {
+      asyncUnimplementedUnaryCall(getScanNoteByIvkMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void scanAndMarkNoteByIvk(org.tron.api.GrpcAPI.IvkDecryptAndMarkParameters request,
+        io.grpc.stub.StreamObserver<org.tron.api.GrpcAPI.DecryptNotesMarked> responseObserver) {
+      asyncUnimplementedUnaryCall(getScanAndMarkNoteByIvkMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void scanNoteByOvk(org.tron.api.GrpcAPI.OvkDecryptParameters request,
+        io.grpc.stub.StreamObserver<org.tron.api.GrpcAPI.DecryptNotes> responseObserver) {
+      asyncUnimplementedUnaryCall(getScanNoteByOvkMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void getSpendingKey(org.tron.api.GrpcAPI.EmptyMessage request,
+        io.grpc.stub.StreamObserver<org.tron.api.GrpcAPI.BytesMessage> responseObserver) {
+      asyncUnimplementedUnaryCall(getGetSpendingKeyMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void getExpandedSpendingKey(org.tron.api.GrpcAPI.BytesMessage request,
+        io.grpc.stub.StreamObserver<org.tron.api.GrpcAPI.ExpandedSpendingKeyMessage> responseObserver) {
+      asyncUnimplementedUnaryCall(getGetExpandedSpendingKeyMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void getAkFromAsk(org.tron.api.GrpcAPI.BytesMessage request,
+        io.grpc.stub.StreamObserver<org.tron.api.GrpcAPI.BytesMessage> responseObserver) {
+      asyncUnimplementedUnaryCall(getGetAkFromAskMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void getNkFromNsk(org.tron.api.GrpcAPI.BytesMessage request,
+        io.grpc.stub.StreamObserver<org.tron.api.GrpcAPI.BytesMessage> responseObserver) {
+      asyncUnimplementedUnaryCall(getGetNkFromNskMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void getIncomingViewingKey(org.tron.api.GrpcAPI.ViewingKeyMessage request,
+        io.grpc.stub.StreamObserver<org.tron.api.GrpcAPI.IncomingViewingKeyMessage> responseObserver) {
+      asyncUnimplementedUnaryCall(getGetIncomingViewingKeyMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void getDiversifier(org.tron.api.GrpcAPI.EmptyMessage request,
+        io.grpc.stub.StreamObserver<org.tron.api.GrpcAPI.DiversifierMessage> responseObserver) {
+      asyncUnimplementedUnaryCall(getGetDiversifierMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void getZenPaymentAddress(org.tron.api.GrpcAPI.IncomingViewingKeyDiversifierMessage request,
+        io.grpc.stub.StreamObserver<org.tron.api.GrpcAPI.PaymentAddressMessage> responseObserver) {
+      asyncUnimplementedUnaryCall(getGetZenPaymentAddressMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void getRcm(org.tron.api.GrpcAPI.EmptyMessage request,
+        io.grpc.stub.StreamObserver<org.tron.api.GrpcAPI.BytesMessage> responseObserver) {
+      asyncUnimplementedUnaryCall(getGetRcmMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void isSpend(org.tron.api.GrpcAPI.NoteParameters request,
+        io.grpc.stub.StreamObserver<org.tron.api.GrpcAPI.SpendResult> responseObserver) {
+      asyncUnimplementedUnaryCall(getIsSpendMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void createShieldedTransactionWithoutSpendAuthSig(org.tron.api.GrpcAPI.PrivateParametersWithoutAsk request,
+        io.grpc.stub.StreamObserver<org.tron.api.GrpcAPI.TransactionExtention> responseObserver) {
+      asyncUnimplementedUnaryCall(getCreateShieldedTransactionWithoutSpendAuthSigMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void getShieldTransactionHash(org.tron.protos.Protocol.Transaction request,
+        io.grpc.stub.StreamObserver<org.tron.api.GrpcAPI.BytesMessage> responseObserver) {
+      asyncUnimplementedUnaryCall(getGetShieldTransactionHashMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void createSpendAuthSig(org.tron.api.GrpcAPI.SpendAuthSigParameters request,
+        io.grpc.stub.StreamObserver<org.tron.api.GrpcAPI.BytesMessage> responseObserver) {
+      asyncUnimplementedUnaryCall(getCreateSpendAuthSigMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void createShieldNullifier(org.tron.api.GrpcAPI.NfParameters request,
+        io.grpc.stub.StreamObserver<org.tron.api.GrpcAPI.BytesMessage> responseObserver) {
+      asyncUnimplementedUnaryCall(getCreateShieldNullifierMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -4567,6 +5272,132 @@ public final class WalletGrpc {
                 org.tron.api.GrpcAPI.EmptyMessage,
                 org.tron.protos.Protocol.NodeInfo>(
                   this, METHODID_GET_NODE_INFO)))
+          .addMethod(
+            getCreateShieldedTransactionMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                org.tron.api.GrpcAPI.PrivateParameters,
+                org.tron.api.GrpcAPI.TransactionExtention>(
+                  this, METHODID_CREATE_SHIELDED_TRANSACTION)))
+          .addMethod(
+            getGetMerkleTreeVoucherInfoMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                org.tron.protos.Contract.OutputPointInfo,
+                org.tron.protos.Contract.IncrementalMerkleVoucherInfo>(
+                  this, METHODID_GET_MERKLE_TREE_VOUCHER_INFO)))
+          .addMethod(
+            getScanNoteByIvkMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                org.tron.api.GrpcAPI.IvkDecryptParameters,
+                org.tron.api.GrpcAPI.DecryptNotes>(
+                  this, METHODID_SCAN_NOTE_BY_IVK)))
+          .addMethod(
+            getScanAndMarkNoteByIvkMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                org.tron.api.GrpcAPI.IvkDecryptAndMarkParameters,
+                org.tron.api.GrpcAPI.DecryptNotesMarked>(
+                  this, METHODID_SCAN_AND_MARK_NOTE_BY_IVK)))
+          .addMethod(
+            getScanNoteByOvkMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                org.tron.api.GrpcAPI.OvkDecryptParameters,
+                org.tron.api.GrpcAPI.DecryptNotes>(
+                  this, METHODID_SCAN_NOTE_BY_OVK)))
+          .addMethod(
+            getGetSpendingKeyMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                org.tron.api.GrpcAPI.EmptyMessage,
+                org.tron.api.GrpcAPI.BytesMessage>(
+                  this, METHODID_GET_SPENDING_KEY)))
+          .addMethod(
+            getGetExpandedSpendingKeyMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                org.tron.api.GrpcAPI.BytesMessage,
+                org.tron.api.GrpcAPI.ExpandedSpendingKeyMessage>(
+                  this, METHODID_GET_EXPANDED_SPENDING_KEY)))
+          .addMethod(
+            getGetAkFromAskMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                org.tron.api.GrpcAPI.BytesMessage,
+                org.tron.api.GrpcAPI.BytesMessage>(
+                  this, METHODID_GET_AK_FROM_ASK)))
+          .addMethod(
+            getGetNkFromNskMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                org.tron.api.GrpcAPI.BytesMessage,
+                org.tron.api.GrpcAPI.BytesMessage>(
+                  this, METHODID_GET_NK_FROM_NSK)))
+          .addMethod(
+            getGetIncomingViewingKeyMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                org.tron.api.GrpcAPI.ViewingKeyMessage,
+                org.tron.api.GrpcAPI.IncomingViewingKeyMessage>(
+                  this, METHODID_GET_INCOMING_VIEWING_KEY)))
+          .addMethod(
+            getGetDiversifierMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                org.tron.api.GrpcAPI.EmptyMessage,
+                org.tron.api.GrpcAPI.DiversifierMessage>(
+                  this, METHODID_GET_DIVERSIFIER)))
+          .addMethod(
+            getGetZenPaymentAddressMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                org.tron.api.GrpcAPI.IncomingViewingKeyDiversifierMessage,
+                org.tron.api.GrpcAPI.PaymentAddressMessage>(
+                  this, METHODID_GET_ZEN_PAYMENT_ADDRESS)))
+          .addMethod(
+            getGetRcmMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                org.tron.api.GrpcAPI.EmptyMessage,
+                org.tron.api.GrpcAPI.BytesMessage>(
+                  this, METHODID_GET_RCM)))
+          .addMethod(
+            getIsSpendMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                org.tron.api.GrpcAPI.NoteParameters,
+                org.tron.api.GrpcAPI.SpendResult>(
+                  this, METHODID_IS_SPEND)))
+          .addMethod(
+            getCreateShieldedTransactionWithoutSpendAuthSigMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                org.tron.api.GrpcAPI.PrivateParametersWithoutAsk,
+                org.tron.api.GrpcAPI.TransactionExtention>(
+                  this, METHODID_CREATE_SHIELDED_TRANSACTION_WITHOUT_SPEND_AUTH_SIG)))
+          .addMethod(
+            getGetShieldTransactionHashMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                org.tron.protos.Protocol.Transaction,
+                org.tron.api.GrpcAPI.BytesMessage>(
+                  this, METHODID_GET_SHIELD_TRANSACTION_HASH)))
+          .addMethod(
+            getCreateSpendAuthSigMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                org.tron.api.GrpcAPI.SpendAuthSigParameters,
+                org.tron.api.GrpcAPI.BytesMessage>(
+                  this, METHODID_CREATE_SPEND_AUTH_SIG)))
+          .addMethod(
+            getCreateShieldNullifierMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                org.tron.api.GrpcAPI.NfParameters,
+                org.tron.api.GrpcAPI.BytesMessage>(
+                  this, METHODID_CREATE_SHIELD_NULLIFIER)))
           .build();
     }
   }
@@ -5488,6 +6319,153 @@ public final class WalletGrpc {
       asyncUnaryCall(
           getChannel().newCall(getGetNodeInfoMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * for shiededTransaction
+     * </pre>
+     */
+    public void createShieldedTransaction(org.tron.api.GrpcAPI.PrivateParameters request,
+        io.grpc.stub.StreamObserver<org.tron.api.GrpcAPI.TransactionExtention> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getCreateShieldedTransactionMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void getMerkleTreeVoucherInfo(org.tron.protos.Contract.OutputPointInfo request,
+        io.grpc.stub.StreamObserver<org.tron.protos.Contract.IncrementalMerkleVoucherInfo> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getGetMerkleTreeVoucherInfoMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void scanNoteByIvk(org.tron.api.GrpcAPI.IvkDecryptParameters request,
+        io.grpc.stub.StreamObserver<org.tron.api.GrpcAPI.DecryptNotes> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getScanNoteByIvkMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void scanAndMarkNoteByIvk(org.tron.api.GrpcAPI.IvkDecryptAndMarkParameters request,
+        io.grpc.stub.StreamObserver<org.tron.api.GrpcAPI.DecryptNotesMarked> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getScanAndMarkNoteByIvkMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void scanNoteByOvk(org.tron.api.GrpcAPI.OvkDecryptParameters request,
+        io.grpc.stub.StreamObserver<org.tron.api.GrpcAPI.DecryptNotes> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getScanNoteByOvkMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void getSpendingKey(org.tron.api.GrpcAPI.EmptyMessage request,
+        io.grpc.stub.StreamObserver<org.tron.api.GrpcAPI.BytesMessage> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getGetSpendingKeyMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void getExpandedSpendingKey(org.tron.api.GrpcAPI.BytesMessage request,
+        io.grpc.stub.StreamObserver<org.tron.api.GrpcAPI.ExpandedSpendingKeyMessage> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getGetExpandedSpendingKeyMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void getAkFromAsk(org.tron.api.GrpcAPI.BytesMessage request,
+        io.grpc.stub.StreamObserver<org.tron.api.GrpcAPI.BytesMessage> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getGetAkFromAskMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void getNkFromNsk(org.tron.api.GrpcAPI.BytesMessage request,
+        io.grpc.stub.StreamObserver<org.tron.api.GrpcAPI.BytesMessage> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getGetNkFromNskMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void getIncomingViewingKey(org.tron.api.GrpcAPI.ViewingKeyMessage request,
+        io.grpc.stub.StreamObserver<org.tron.api.GrpcAPI.IncomingViewingKeyMessage> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getGetIncomingViewingKeyMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void getDiversifier(org.tron.api.GrpcAPI.EmptyMessage request,
+        io.grpc.stub.StreamObserver<org.tron.api.GrpcAPI.DiversifierMessage> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getGetDiversifierMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void getZenPaymentAddress(org.tron.api.GrpcAPI.IncomingViewingKeyDiversifierMessage request,
+        io.grpc.stub.StreamObserver<org.tron.api.GrpcAPI.PaymentAddressMessage> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getGetZenPaymentAddressMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void getRcm(org.tron.api.GrpcAPI.EmptyMessage request,
+        io.grpc.stub.StreamObserver<org.tron.api.GrpcAPI.BytesMessage> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getGetRcmMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void isSpend(org.tron.api.GrpcAPI.NoteParameters request,
+        io.grpc.stub.StreamObserver<org.tron.api.GrpcAPI.SpendResult> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getIsSpendMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void createShieldedTransactionWithoutSpendAuthSig(org.tron.api.GrpcAPI.PrivateParametersWithoutAsk request,
+        io.grpc.stub.StreamObserver<org.tron.api.GrpcAPI.TransactionExtention> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getCreateShieldedTransactionWithoutSpendAuthSigMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void getShieldTransactionHash(org.tron.protos.Protocol.Transaction request,
+        io.grpc.stub.StreamObserver<org.tron.api.GrpcAPI.BytesMessage> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getGetShieldTransactionHashMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void createSpendAuthSig(org.tron.api.GrpcAPI.SpendAuthSigParameters request,
+        io.grpc.stub.StreamObserver<org.tron.api.GrpcAPI.BytesMessage> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getCreateSpendAuthSigMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void createShieldNullifier(org.tron.api.GrpcAPI.NfParameters request,
+        io.grpc.stub.StreamObserver<org.tron.api.GrpcAPI.BytesMessage> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getCreateShieldNullifierMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -6311,6 +7289,135 @@ public final class WalletGrpc {
     public org.tron.protos.Protocol.NodeInfo getNodeInfo(org.tron.api.GrpcAPI.EmptyMessage request) {
       return blockingUnaryCall(
           getChannel(), getGetNodeInfoMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * for shiededTransaction
+     * </pre>
+     */
+    public org.tron.api.GrpcAPI.TransactionExtention createShieldedTransaction(org.tron.api.GrpcAPI.PrivateParameters request) {
+      return blockingUnaryCall(
+          getChannel(), getCreateShieldedTransactionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public org.tron.protos.Contract.IncrementalMerkleVoucherInfo getMerkleTreeVoucherInfo(org.tron.protos.Contract.OutputPointInfo request) {
+      return blockingUnaryCall(
+          getChannel(), getGetMerkleTreeVoucherInfoMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public org.tron.api.GrpcAPI.DecryptNotes scanNoteByIvk(org.tron.api.GrpcAPI.IvkDecryptParameters request) {
+      return blockingUnaryCall(
+          getChannel(), getScanNoteByIvkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public org.tron.api.GrpcAPI.DecryptNotesMarked scanAndMarkNoteByIvk(org.tron.api.GrpcAPI.IvkDecryptAndMarkParameters request) {
+      return blockingUnaryCall(
+          getChannel(), getScanAndMarkNoteByIvkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public org.tron.api.GrpcAPI.DecryptNotes scanNoteByOvk(org.tron.api.GrpcAPI.OvkDecryptParameters request) {
+      return blockingUnaryCall(
+          getChannel(), getScanNoteByOvkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public org.tron.api.GrpcAPI.BytesMessage getSpendingKey(org.tron.api.GrpcAPI.EmptyMessage request) {
+      return blockingUnaryCall(
+          getChannel(), getGetSpendingKeyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public org.tron.api.GrpcAPI.ExpandedSpendingKeyMessage getExpandedSpendingKey(org.tron.api.GrpcAPI.BytesMessage request) {
+      return blockingUnaryCall(
+          getChannel(), getGetExpandedSpendingKeyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public org.tron.api.GrpcAPI.BytesMessage getAkFromAsk(org.tron.api.GrpcAPI.BytesMessage request) {
+      return blockingUnaryCall(
+          getChannel(), getGetAkFromAskMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public org.tron.api.GrpcAPI.BytesMessage getNkFromNsk(org.tron.api.GrpcAPI.BytesMessage request) {
+      return blockingUnaryCall(
+          getChannel(), getGetNkFromNskMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public org.tron.api.GrpcAPI.IncomingViewingKeyMessage getIncomingViewingKey(org.tron.api.GrpcAPI.ViewingKeyMessage request) {
+      return blockingUnaryCall(
+          getChannel(), getGetIncomingViewingKeyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public org.tron.api.GrpcAPI.DiversifierMessage getDiversifier(org.tron.api.GrpcAPI.EmptyMessage request) {
+      return blockingUnaryCall(
+          getChannel(), getGetDiversifierMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public org.tron.api.GrpcAPI.PaymentAddressMessage getZenPaymentAddress(org.tron.api.GrpcAPI.IncomingViewingKeyDiversifierMessage request) {
+      return blockingUnaryCall(
+          getChannel(), getGetZenPaymentAddressMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public org.tron.api.GrpcAPI.BytesMessage getRcm(org.tron.api.GrpcAPI.EmptyMessage request) {
+      return blockingUnaryCall(
+          getChannel(), getGetRcmMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public org.tron.api.GrpcAPI.SpendResult isSpend(org.tron.api.GrpcAPI.NoteParameters request) {
+      return blockingUnaryCall(
+          getChannel(), getIsSpendMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public org.tron.api.GrpcAPI.TransactionExtention createShieldedTransactionWithoutSpendAuthSig(org.tron.api.GrpcAPI.PrivateParametersWithoutAsk request) {
+      return blockingUnaryCall(
+          getChannel(), getCreateShieldedTransactionWithoutSpendAuthSigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public org.tron.api.GrpcAPI.BytesMessage getShieldTransactionHash(org.tron.protos.Protocol.Transaction request) {
+      return blockingUnaryCall(
+          getChannel(), getGetShieldTransactionHashMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public org.tron.api.GrpcAPI.BytesMessage createSpendAuthSig(org.tron.api.GrpcAPI.SpendAuthSigParameters request) {
+      return blockingUnaryCall(
+          getChannel(), getCreateSpendAuthSigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public org.tron.api.GrpcAPI.BytesMessage createShieldNullifier(org.tron.api.GrpcAPI.NfParameters request) {
+      return blockingUnaryCall(
+          getChannel(), getCreateShieldNullifierMethod(), getCallOptions(), request);
     }
   }
 
@@ -7231,6 +8338,153 @@ public final class WalletGrpc {
       return futureUnaryCall(
           getChannel().newCall(getGetNodeInfoMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * for shiededTransaction
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<org.tron.api.GrpcAPI.TransactionExtention> createShieldedTransaction(
+        org.tron.api.GrpcAPI.PrivateParameters request) {
+      return futureUnaryCall(
+          getChannel().newCall(getCreateShieldedTransactionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<org.tron.protos.Contract.IncrementalMerkleVoucherInfo> getMerkleTreeVoucherInfo(
+        org.tron.protos.Contract.OutputPointInfo request) {
+      return futureUnaryCall(
+          getChannel().newCall(getGetMerkleTreeVoucherInfoMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<org.tron.api.GrpcAPI.DecryptNotes> scanNoteByIvk(
+        org.tron.api.GrpcAPI.IvkDecryptParameters request) {
+      return futureUnaryCall(
+          getChannel().newCall(getScanNoteByIvkMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<org.tron.api.GrpcAPI.DecryptNotesMarked> scanAndMarkNoteByIvk(
+        org.tron.api.GrpcAPI.IvkDecryptAndMarkParameters request) {
+      return futureUnaryCall(
+          getChannel().newCall(getScanAndMarkNoteByIvkMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<org.tron.api.GrpcAPI.DecryptNotes> scanNoteByOvk(
+        org.tron.api.GrpcAPI.OvkDecryptParameters request) {
+      return futureUnaryCall(
+          getChannel().newCall(getScanNoteByOvkMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<org.tron.api.GrpcAPI.BytesMessage> getSpendingKey(
+        org.tron.api.GrpcAPI.EmptyMessage request) {
+      return futureUnaryCall(
+          getChannel().newCall(getGetSpendingKeyMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<org.tron.api.GrpcAPI.ExpandedSpendingKeyMessage> getExpandedSpendingKey(
+        org.tron.api.GrpcAPI.BytesMessage request) {
+      return futureUnaryCall(
+          getChannel().newCall(getGetExpandedSpendingKeyMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<org.tron.api.GrpcAPI.BytesMessage> getAkFromAsk(
+        org.tron.api.GrpcAPI.BytesMessage request) {
+      return futureUnaryCall(
+          getChannel().newCall(getGetAkFromAskMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<org.tron.api.GrpcAPI.BytesMessage> getNkFromNsk(
+        org.tron.api.GrpcAPI.BytesMessage request) {
+      return futureUnaryCall(
+          getChannel().newCall(getGetNkFromNskMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<org.tron.api.GrpcAPI.IncomingViewingKeyMessage> getIncomingViewingKey(
+        org.tron.api.GrpcAPI.ViewingKeyMessage request) {
+      return futureUnaryCall(
+          getChannel().newCall(getGetIncomingViewingKeyMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<org.tron.api.GrpcAPI.DiversifierMessage> getDiversifier(
+        org.tron.api.GrpcAPI.EmptyMessage request) {
+      return futureUnaryCall(
+          getChannel().newCall(getGetDiversifierMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<org.tron.api.GrpcAPI.PaymentAddressMessage> getZenPaymentAddress(
+        org.tron.api.GrpcAPI.IncomingViewingKeyDiversifierMessage request) {
+      return futureUnaryCall(
+          getChannel().newCall(getGetZenPaymentAddressMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<org.tron.api.GrpcAPI.BytesMessage> getRcm(
+        org.tron.api.GrpcAPI.EmptyMessage request) {
+      return futureUnaryCall(
+          getChannel().newCall(getGetRcmMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<org.tron.api.GrpcAPI.SpendResult> isSpend(
+        org.tron.api.GrpcAPI.NoteParameters request) {
+      return futureUnaryCall(
+          getChannel().newCall(getIsSpendMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<org.tron.api.GrpcAPI.TransactionExtention> createShieldedTransactionWithoutSpendAuthSig(
+        org.tron.api.GrpcAPI.PrivateParametersWithoutAsk request) {
+      return futureUnaryCall(
+          getChannel().newCall(getCreateShieldedTransactionWithoutSpendAuthSigMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<org.tron.api.GrpcAPI.BytesMessage> getShieldTransactionHash(
+        org.tron.protos.Protocol.Transaction request) {
+      return futureUnaryCall(
+          getChannel().newCall(getGetShieldTransactionHashMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<org.tron.api.GrpcAPI.BytesMessage> createSpendAuthSig(
+        org.tron.api.GrpcAPI.SpendAuthSigParameters request) {
+      return futureUnaryCall(
+          getChannel().newCall(getCreateSpendAuthSigMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<org.tron.api.GrpcAPI.BytesMessage> createShieldNullifier(
+        org.tron.api.GrpcAPI.NfParameters request) {
+      return futureUnaryCall(
+          getChannel().newCall(getCreateShieldNullifierMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_GET_ACCOUNT = 0;
@@ -7328,6 +8582,24 @@ public final class WalletGrpc {
   private static final int METHODID_GET_TRANSACTION_SIGN_WEIGHT = 92;
   private static final int METHODID_GET_TRANSACTION_APPROVED_LIST = 93;
   private static final int METHODID_GET_NODE_INFO = 94;
+  private static final int METHODID_CREATE_SHIELDED_TRANSACTION = 95;
+  private static final int METHODID_GET_MERKLE_TREE_VOUCHER_INFO = 96;
+  private static final int METHODID_SCAN_NOTE_BY_IVK = 97;
+  private static final int METHODID_SCAN_AND_MARK_NOTE_BY_IVK = 98;
+  private static final int METHODID_SCAN_NOTE_BY_OVK = 99;
+  private static final int METHODID_GET_SPENDING_KEY = 100;
+  private static final int METHODID_GET_EXPANDED_SPENDING_KEY = 101;
+  private static final int METHODID_GET_AK_FROM_ASK = 102;
+  private static final int METHODID_GET_NK_FROM_NSK = 103;
+  private static final int METHODID_GET_INCOMING_VIEWING_KEY = 104;
+  private static final int METHODID_GET_DIVERSIFIER = 105;
+  private static final int METHODID_GET_ZEN_PAYMENT_ADDRESS = 106;
+  private static final int METHODID_GET_RCM = 107;
+  private static final int METHODID_IS_SPEND = 108;
+  private static final int METHODID_CREATE_SHIELDED_TRANSACTION_WITHOUT_SPEND_AUTH_SIG = 109;
+  private static final int METHODID_GET_SHIELD_TRANSACTION_HASH = 110;
+  private static final int METHODID_CREATE_SPEND_AUTH_SIG = 111;
+  private static final int METHODID_CREATE_SHIELD_NULLIFIER = 112;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -7726,6 +8998,78 @@ public final class WalletGrpc {
           serviceImpl.getNodeInfo((org.tron.api.GrpcAPI.EmptyMessage) request,
               (io.grpc.stub.StreamObserver<org.tron.protos.Protocol.NodeInfo>) responseObserver);
           break;
+        case METHODID_CREATE_SHIELDED_TRANSACTION:
+          serviceImpl.createShieldedTransaction((org.tron.api.GrpcAPI.PrivateParameters) request,
+              (io.grpc.stub.StreamObserver<org.tron.api.GrpcAPI.TransactionExtention>) responseObserver);
+          break;
+        case METHODID_GET_MERKLE_TREE_VOUCHER_INFO:
+          serviceImpl.getMerkleTreeVoucherInfo((org.tron.protos.Contract.OutputPointInfo) request,
+              (io.grpc.stub.StreamObserver<org.tron.protos.Contract.IncrementalMerkleVoucherInfo>) responseObserver);
+          break;
+        case METHODID_SCAN_NOTE_BY_IVK:
+          serviceImpl.scanNoteByIvk((org.tron.api.GrpcAPI.IvkDecryptParameters) request,
+              (io.grpc.stub.StreamObserver<org.tron.api.GrpcAPI.DecryptNotes>) responseObserver);
+          break;
+        case METHODID_SCAN_AND_MARK_NOTE_BY_IVK:
+          serviceImpl.scanAndMarkNoteByIvk((org.tron.api.GrpcAPI.IvkDecryptAndMarkParameters) request,
+              (io.grpc.stub.StreamObserver<org.tron.api.GrpcAPI.DecryptNotesMarked>) responseObserver);
+          break;
+        case METHODID_SCAN_NOTE_BY_OVK:
+          serviceImpl.scanNoteByOvk((org.tron.api.GrpcAPI.OvkDecryptParameters) request,
+              (io.grpc.stub.StreamObserver<org.tron.api.GrpcAPI.DecryptNotes>) responseObserver);
+          break;
+        case METHODID_GET_SPENDING_KEY:
+          serviceImpl.getSpendingKey((org.tron.api.GrpcAPI.EmptyMessage) request,
+              (io.grpc.stub.StreamObserver<org.tron.api.GrpcAPI.BytesMessage>) responseObserver);
+          break;
+        case METHODID_GET_EXPANDED_SPENDING_KEY:
+          serviceImpl.getExpandedSpendingKey((org.tron.api.GrpcAPI.BytesMessage) request,
+              (io.grpc.stub.StreamObserver<org.tron.api.GrpcAPI.ExpandedSpendingKeyMessage>) responseObserver);
+          break;
+        case METHODID_GET_AK_FROM_ASK:
+          serviceImpl.getAkFromAsk((org.tron.api.GrpcAPI.BytesMessage) request,
+              (io.grpc.stub.StreamObserver<org.tron.api.GrpcAPI.BytesMessage>) responseObserver);
+          break;
+        case METHODID_GET_NK_FROM_NSK:
+          serviceImpl.getNkFromNsk((org.tron.api.GrpcAPI.BytesMessage) request,
+              (io.grpc.stub.StreamObserver<org.tron.api.GrpcAPI.BytesMessage>) responseObserver);
+          break;
+        case METHODID_GET_INCOMING_VIEWING_KEY:
+          serviceImpl.getIncomingViewingKey((org.tron.api.GrpcAPI.ViewingKeyMessage) request,
+              (io.grpc.stub.StreamObserver<org.tron.api.GrpcAPI.IncomingViewingKeyMessage>) responseObserver);
+          break;
+        case METHODID_GET_DIVERSIFIER:
+          serviceImpl.getDiversifier((org.tron.api.GrpcAPI.EmptyMessage) request,
+              (io.grpc.stub.StreamObserver<org.tron.api.GrpcAPI.DiversifierMessage>) responseObserver);
+          break;
+        case METHODID_GET_ZEN_PAYMENT_ADDRESS:
+          serviceImpl.getZenPaymentAddress((org.tron.api.GrpcAPI.IncomingViewingKeyDiversifierMessage) request,
+              (io.grpc.stub.StreamObserver<org.tron.api.GrpcAPI.PaymentAddressMessage>) responseObserver);
+          break;
+        case METHODID_GET_RCM:
+          serviceImpl.getRcm((org.tron.api.GrpcAPI.EmptyMessage) request,
+              (io.grpc.stub.StreamObserver<org.tron.api.GrpcAPI.BytesMessage>) responseObserver);
+          break;
+        case METHODID_IS_SPEND:
+          serviceImpl.isSpend((org.tron.api.GrpcAPI.NoteParameters) request,
+              (io.grpc.stub.StreamObserver<org.tron.api.GrpcAPI.SpendResult>) responseObserver);
+          break;
+        case METHODID_CREATE_SHIELDED_TRANSACTION_WITHOUT_SPEND_AUTH_SIG:
+          serviceImpl.createShieldedTransactionWithoutSpendAuthSig((org.tron.api.GrpcAPI.PrivateParametersWithoutAsk) request,
+              (io.grpc.stub.StreamObserver<org.tron.api.GrpcAPI.TransactionExtention>) responseObserver);
+          break;
+        case METHODID_GET_SHIELD_TRANSACTION_HASH:
+          serviceImpl.getShieldTransactionHash((org.tron.protos.Protocol.Transaction) request,
+              (io.grpc.stub.StreamObserver<org.tron.api.GrpcAPI.BytesMessage>) responseObserver);
+          break;
+        case METHODID_CREATE_SPEND_AUTH_SIG:
+          serviceImpl.createSpendAuthSig((org.tron.api.GrpcAPI.SpendAuthSigParameters) request,
+              (io.grpc.stub.StreamObserver<org.tron.api.GrpcAPI.BytesMessage>) responseObserver);
+          break;
+        case METHODID_CREATE_SHIELD_NULLIFIER:
+          serviceImpl.createShieldNullifier((org.tron.api.GrpcAPI.NfParameters) request,
+              (io.grpc.stub.StreamObserver<org.tron.api.GrpcAPI.BytesMessage>) responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -7882,6 +9226,24 @@ public final class WalletGrpc {
               .addMethod(getGetTransactionSignWeightMethod())
               .addMethod(getGetTransactionApprovedListMethod())
               .addMethod(getGetNodeInfoMethod())
+              .addMethod(getCreateShieldedTransactionMethod())
+              .addMethod(getGetMerkleTreeVoucherInfoMethod())
+              .addMethod(getScanNoteByIvkMethod())
+              .addMethod(getScanAndMarkNoteByIvkMethod())
+              .addMethod(getScanNoteByOvkMethod())
+              .addMethod(getGetSpendingKeyMethod())
+              .addMethod(getGetExpandedSpendingKeyMethod())
+              .addMethod(getGetAkFromAskMethod())
+              .addMethod(getGetNkFromNskMethod())
+              .addMethod(getGetIncomingViewingKeyMethod())
+              .addMethod(getGetDiversifierMethod())
+              .addMethod(getGetZenPaymentAddressMethod())
+              .addMethod(getGetRcmMethod())
+              .addMethod(getIsSpendMethod())
+              .addMethod(getCreateShieldedTransactionWithoutSpendAuthSigMethod())
+              .addMethod(getGetShieldTransactionHashMethod())
+              .addMethod(getCreateSpendAuthSigMethod())
+              .addMethod(getCreateShieldNullifierMethod())
               .build();
         }
       }

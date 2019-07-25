@@ -22446,6 +22446,10 @@ public final class Protocol {
          * <code>ClearABIContract = 48;</code>
          */
         ClearABIContract(48),
+        /**
+         * <code>ShieldedTransferContract = 51;</code>
+         */
+        ShieldedTransferContract(51),
         UNRECOGNIZED(-1),
         ;
 
@@ -22579,6 +22583,10 @@ public final class Protocol {
          * <code>ClearABIContract = 48;</code>
          */
         public static final int ClearABIContract_VALUE = 48;
+        /**
+         * <code>ShieldedTransferContract = 51;</code>
+         */
+        public static final int ShieldedTransferContract_VALUE = 51;
 
 
         public final int getNumber() {
@@ -22630,6 +22638,7 @@ public final class Protocol {
             case 45: return UpdateEnergyLimitContract;
             case 46: return AccountPermissionUpdateContract;
             case 48: return ClearABIContract;
+            case 51: return ShieldedTransferContract;
             default: return null;
           }
         }
@@ -23468,6 +23477,11 @@ public final class Protocol {
        * <code>int64 exchange_id = 21;</code>
        */
       long getExchangeId();
+
+      /**
+       * <code>int64 shielded_transaction_fee = 22;</code>
+       */
+      long getShieldedTransactionFee();
     }
     /**
      * Protobuf type {@code protocol.Transaction.Result}
@@ -23492,6 +23506,7 @@ public final class Protocol {
         exchangeInjectAnotherAmount_ = 0L;
         exchangeWithdrawAnotherAmount_ = 0L;
         exchangeId_ = 0L;
+        shieldedTransactionFee_ = 0L;
       }
 
       @java.lang.Override
@@ -23576,6 +23591,11 @@ public final class Protocol {
               case 168: {
 
                 exchangeId_ = input.readInt64();
+                break;
+              }
+              case 176: {
+
+                shieldedTransactionFee_ = input.readInt64();
                 break;
               }
             }
@@ -24044,6 +24064,15 @@ public final class Protocol {
         return exchangeId_;
       }
 
+      public static final int SHIELDED_TRANSACTION_FEE_FIELD_NUMBER = 22;
+      private long shieldedTransactionFee_;
+      /**
+       * <code>int64 shielded_transaction_fee = 22;</code>
+       */
+      public long getShieldedTransactionFee() {
+        return shieldedTransactionFee_;
+      }
+
       private byte memoizedIsInitialized = -1;
       public final boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
@@ -24085,6 +24114,9 @@ public final class Protocol {
         }
         if (exchangeId_ != 0L) {
           output.writeInt64(21, exchangeId_);
+        }
+        if (shieldedTransactionFee_ != 0L) {
+          output.writeInt64(22, shieldedTransactionFee_);
         }
         unknownFields.writeTo(output);
       }
@@ -24133,6 +24165,10 @@ public final class Protocol {
           size += com.google.protobuf.CodedOutputStream
             .computeInt64Size(21, exchangeId_);
         }
+        if (shieldedTransactionFee_ != 0L) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeInt64Size(22, shieldedTransactionFee_);
+        }
         size += unknownFields.getSerializedSize();
         memoizedSize = size;
         return size;
@@ -24167,6 +24203,8 @@ public final class Protocol {
             == other.getExchangeWithdrawAnotherAmount());
         result = result && (getExchangeId()
             == other.getExchangeId());
+        result = result && (getShieldedTransactionFee()
+            == other.getShieldedTransactionFee());
         result = result && unknownFields.equals(other.unknownFields);
         return result;
       }
@@ -24205,6 +24243,9 @@ public final class Protocol {
         hash = (37 * hash) + EXCHANGE_ID_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
             getExchangeId());
+        hash = (37 * hash) + SHIELDED_TRANSACTION_FEE_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getShieldedTransactionFee());
         hash = (29 * hash) + unknownFields.hashCode();
         memoizedHashCode = hash;
         return hash;
@@ -24354,6 +24395,8 @@ public final class Protocol {
 
           exchangeId_ = 0L;
 
+          shieldedTransactionFee_ = 0L;
+
           return this;
         }
 
@@ -24386,6 +24429,7 @@ public final class Protocol {
           result.exchangeInjectAnotherAmount_ = exchangeInjectAnotherAmount_;
           result.exchangeWithdrawAnotherAmount_ = exchangeWithdrawAnotherAmount_;
           result.exchangeId_ = exchangeId_;
+          result.shieldedTransactionFee_ = shieldedTransactionFee_;
           onBuilt();
           return result;
         }
@@ -24457,6 +24501,9 @@ public final class Protocol {
           }
           if (other.getExchangeId() != 0L) {
             setExchangeId(other.getExchangeId());
+          }
+          if (other.getShieldedTransactionFee() != 0L) {
+            setShieldedTransactionFee(other.getShieldedTransactionFee());
           }
           this.mergeUnknownFields(other.unknownFields);
           onChanged();
@@ -24820,6 +24867,32 @@ public final class Protocol {
         public Builder clearExchangeId() {
           
           exchangeId_ = 0L;
+          onChanged();
+          return this;
+        }
+
+        private long shieldedTransactionFee_ ;
+        /**
+         * <code>int64 shielded_transaction_fee = 22;</code>
+         */
+        public long getShieldedTransactionFee() {
+          return shieldedTransactionFee_;
+        }
+        /**
+         * <code>int64 shielded_transaction_fee = 22;</code>
+         */
+        public Builder setShieldedTransactionFee(long value) {
+          
+          shieldedTransactionFee_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>int64 shielded_transaction_fee = 22;</code>
+         */
+        public Builder clearShieldedTransactionFee() {
+          
+          shieldedTransactionFee_ = 0L;
           onChanged();
           return this;
         }
@@ -27813,6 +27886,11 @@ public final class Protocol {
      * <code>int64 exchange_id = 21;</code>
      */
     long getExchangeId();
+
+    /**
+     * <code>int64 shielded_transaction_fee = 22;</code>
+     */
+    long getShieldedTransactionFee();
   }
   /**
    * Protobuf type {@code protocol.TransactionInfo}
@@ -27844,6 +27922,7 @@ public final class Protocol {
       exchangeInjectAnotherAmount_ = 0L;
       exchangeWithdrawAnotherAmount_ = 0L;
       exchangeId_ = 0L;
+      shieldedTransactionFee_ = 0L;
     }
 
     @java.lang.Override
@@ -27986,6 +28065,11 @@ public final class Protocol {
             case 168: {
 
               exchangeId_ = input.readInt64();
+              break;
+            }
+            case 176: {
+
+              shieldedTransactionFee_ = input.readInt64();
               break;
             }
           }
@@ -29070,6 +29154,15 @@ public final class Protocol {
       return exchangeId_;
     }
 
+    public static final int SHIELDED_TRANSACTION_FEE_FIELD_NUMBER = 22;
+    private long shieldedTransactionFee_;
+    /**
+     * <code>int64 shielded_transaction_fee = 22;</code>
+     */
+    public long getShieldedTransactionFee() {
+      return shieldedTransactionFee_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -29135,6 +29228,9 @@ public final class Protocol {
       }
       if (exchangeId_ != 0L) {
         output.writeInt64(21, exchangeId_);
+      }
+      if (shieldedTransactionFee_ != 0L) {
+        output.writeInt64(22, shieldedTransactionFee_);
       }
       unknownFields.writeTo(output);
     }
@@ -29220,6 +29316,10 @@ public final class Protocol {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(21, exchangeId_);
       }
+      if (shieldedTransactionFee_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(22, shieldedTransactionFee_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -29274,6 +29374,8 @@ public final class Protocol {
           == other.getExchangeWithdrawAnotherAmount());
       result = result && (getExchangeId()
           == other.getExchangeId());
+      result = result && (getShieldedTransactionFee()
+          == other.getShieldedTransactionFee());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -29338,6 +29440,9 @@ public final class Protocol {
       hash = (37 * hash) + EXCHANGE_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getExchangeId());
+      hash = (37 * hash) + SHIELDED_TRANSACTION_FEE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getShieldedTransactionFee());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -29517,6 +29622,8 @@ public final class Protocol {
 
         exchangeId_ = 0L;
 
+        shieldedTransactionFee_ = 0L;
+
         return this;
       }
 
@@ -29583,6 +29690,7 @@ public final class Protocol {
         result.exchangeInjectAnotherAmount_ = exchangeInjectAnotherAmount_;
         result.exchangeWithdrawAnotherAmount_ = exchangeWithdrawAnotherAmount_;
         result.exchangeId_ = exchangeId_;
+        result.shieldedTransactionFee_ = shieldedTransactionFee_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -29732,6 +29840,9 @@ public final class Protocol {
         }
         if (other.getExchangeId() != 0L) {
           setExchangeId(other.getExchangeId());
+        }
+        if (other.getShieldedTransactionFee() != 0L) {
+          setShieldedTransactionFee(other.getShieldedTransactionFee());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -30863,6 +30974,32 @@ public final class Protocol {
         onChanged();
         return this;
       }
+
+      private long shieldedTransactionFee_ ;
+      /**
+       * <code>int64 shielded_transaction_fee = 22;</code>
+       */
+      public long getShieldedTransactionFee() {
+        return shieldedTransactionFee_;
+      }
+      /**
+       * <code>int64 shielded_transaction_fee = 22;</code>
+       */
+      public Builder setShieldedTransactionFee(long value) {
+        
+        shieldedTransactionFee_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 shielded_transaction_fee = 22;</code>
+       */
+      public Builder clearShieldedTransactionFee() {
+        
+        shieldedTransactionFee_ = 0L;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFieldsProto3(unknownFields);
@@ -30907,6 +31044,894 @@ public final class Protocol {
     }
 
     public org.tron.protos.Protocol.TransactionInfo getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface TransactionRetOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:protocol.TransactionRet)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>int64 blockNumber = 1;</code>
+     */
+    long getBlockNumber();
+
+    /**
+     * <code>int64 blockTimeStamp = 2;</code>
+     */
+    long getBlockTimeStamp();
+
+    /**
+     * <code>repeated .protocol.TransactionInfo transactioninfo = 3;</code>
+     */
+    java.util.List<org.tron.protos.Protocol.TransactionInfo> 
+        getTransactioninfoList();
+    /**
+     * <code>repeated .protocol.TransactionInfo transactioninfo = 3;</code>
+     */
+    org.tron.protos.Protocol.TransactionInfo getTransactioninfo(int index);
+    /**
+     * <code>repeated .protocol.TransactionInfo transactioninfo = 3;</code>
+     */
+    int getTransactioninfoCount();
+    /**
+     * <code>repeated .protocol.TransactionInfo transactioninfo = 3;</code>
+     */
+    java.util.List<? extends org.tron.protos.Protocol.TransactionInfoOrBuilder> 
+        getTransactioninfoOrBuilderList();
+    /**
+     * <code>repeated .protocol.TransactionInfo transactioninfo = 3;</code>
+     */
+    org.tron.protos.Protocol.TransactionInfoOrBuilder getTransactioninfoOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code protocol.TransactionRet}
+   */
+  public  static final class TransactionRet extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:protocol.TransactionRet)
+      TransactionRetOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use TransactionRet.newBuilder() to construct.
+    private TransactionRet(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private TransactionRet() {
+      blockNumber_ = 0L;
+      blockTimeStamp_ = 0L;
+      transactioninfo_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private TransactionRet(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+
+              blockNumber_ = input.readInt64();
+              break;
+            }
+            case 16: {
+
+              blockTimeStamp_ = input.readInt64();
+              break;
+            }
+            case 26: {
+              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                transactioninfo_ = new java.util.ArrayList<org.tron.protos.Protocol.TransactionInfo>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              transactioninfo_.add(
+                  input.readMessage(org.tron.protos.Protocol.TransactionInfo.parser(), extensionRegistry));
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+          transactioninfo_ = java.util.Collections.unmodifiableList(transactioninfo_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.tron.protos.Protocol.internal_static_protocol_TransactionRet_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.tron.protos.Protocol.internal_static_protocol_TransactionRet_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              org.tron.protos.Protocol.TransactionRet.class, org.tron.protos.Protocol.TransactionRet.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int BLOCKNUMBER_FIELD_NUMBER = 1;
+    private long blockNumber_;
+    /**
+     * <code>int64 blockNumber = 1;</code>
+     */
+    public long getBlockNumber() {
+      return blockNumber_;
+    }
+
+    public static final int BLOCKTIMESTAMP_FIELD_NUMBER = 2;
+    private long blockTimeStamp_;
+    /**
+     * <code>int64 blockTimeStamp = 2;</code>
+     */
+    public long getBlockTimeStamp() {
+      return blockTimeStamp_;
+    }
+
+    public static final int TRANSACTIONINFO_FIELD_NUMBER = 3;
+    private java.util.List<org.tron.protos.Protocol.TransactionInfo> transactioninfo_;
+    /**
+     * <code>repeated .protocol.TransactionInfo transactioninfo = 3;</code>
+     */
+    public java.util.List<org.tron.protos.Protocol.TransactionInfo> getTransactioninfoList() {
+      return transactioninfo_;
+    }
+    /**
+     * <code>repeated .protocol.TransactionInfo transactioninfo = 3;</code>
+     */
+    public java.util.List<? extends org.tron.protos.Protocol.TransactionInfoOrBuilder> 
+        getTransactioninfoOrBuilderList() {
+      return transactioninfo_;
+    }
+    /**
+     * <code>repeated .protocol.TransactionInfo transactioninfo = 3;</code>
+     */
+    public int getTransactioninfoCount() {
+      return transactioninfo_.size();
+    }
+    /**
+     * <code>repeated .protocol.TransactionInfo transactioninfo = 3;</code>
+     */
+    public org.tron.protos.Protocol.TransactionInfo getTransactioninfo(int index) {
+      return transactioninfo_.get(index);
+    }
+    /**
+     * <code>repeated .protocol.TransactionInfo transactioninfo = 3;</code>
+     */
+    public org.tron.protos.Protocol.TransactionInfoOrBuilder getTransactioninfoOrBuilder(
+        int index) {
+      return transactioninfo_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (blockNumber_ != 0L) {
+        output.writeInt64(1, blockNumber_);
+      }
+      if (blockTimeStamp_ != 0L) {
+        output.writeInt64(2, blockTimeStamp_);
+      }
+      for (int i = 0; i < transactioninfo_.size(); i++) {
+        output.writeMessage(3, transactioninfo_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (blockNumber_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(1, blockNumber_);
+      }
+      if (blockTimeStamp_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(2, blockTimeStamp_);
+      }
+      for (int i = 0; i < transactioninfo_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, transactioninfo_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.tron.protos.Protocol.TransactionRet)) {
+        return super.equals(obj);
+      }
+      org.tron.protos.Protocol.TransactionRet other = (org.tron.protos.Protocol.TransactionRet) obj;
+
+      boolean result = true;
+      result = result && (getBlockNumber()
+          == other.getBlockNumber());
+      result = result && (getBlockTimeStamp()
+          == other.getBlockTimeStamp());
+      result = result && getTransactioninfoList()
+          .equals(other.getTransactioninfoList());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + BLOCKNUMBER_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getBlockNumber());
+      hash = (37 * hash) + BLOCKTIMESTAMP_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getBlockTimeStamp());
+      if (getTransactioninfoCount() > 0) {
+        hash = (37 * hash) + TRANSACTIONINFO_FIELD_NUMBER;
+        hash = (53 * hash) + getTransactioninfoList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static org.tron.protos.Protocol.TransactionRet parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.tron.protos.Protocol.TransactionRet parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.tron.protos.Protocol.TransactionRet parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.tron.protos.Protocol.TransactionRet parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.tron.protos.Protocol.TransactionRet parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.tron.protos.Protocol.TransactionRet parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.tron.protos.Protocol.TransactionRet parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.tron.protos.Protocol.TransactionRet parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.tron.protos.Protocol.TransactionRet parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static org.tron.protos.Protocol.TransactionRet parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.tron.protos.Protocol.TransactionRet parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.tron.protos.Protocol.TransactionRet parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(org.tron.protos.Protocol.TransactionRet prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code protocol.TransactionRet}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:protocol.TransactionRet)
+        org.tron.protos.Protocol.TransactionRetOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.tron.protos.Protocol.internal_static_protocol_TransactionRet_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.tron.protos.Protocol.internal_static_protocol_TransactionRet_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.tron.protos.Protocol.TransactionRet.class, org.tron.protos.Protocol.TransactionRet.Builder.class);
+      }
+
+      // Construct using org.tron.protos.Protocol.TransactionRet.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getTransactioninfoFieldBuilder();
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        blockNumber_ = 0L;
+
+        blockTimeStamp_ = 0L;
+
+        if (transactioninfoBuilder_ == null) {
+          transactioninfo_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
+        } else {
+          transactioninfoBuilder_.clear();
+        }
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.tron.protos.Protocol.internal_static_protocol_TransactionRet_descriptor;
+      }
+
+      public org.tron.protos.Protocol.TransactionRet getDefaultInstanceForType() {
+        return org.tron.protos.Protocol.TransactionRet.getDefaultInstance();
+      }
+
+      public org.tron.protos.Protocol.TransactionRet build() {
+        org.tron.protos.Protocol.TransactionRet result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public org.tron.protos.Protocol.TransactionRet buildPartial() {
+        org.tron.protos.Protocol.TransactionRet result = new org.tron.protos.Protocol.TransactionRet(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        result.blockNumber_ = blockNumber_;
+        result.blockTimeStamp_ = blockTimeStamp_;
+        if (transactioninfoBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) == 0x00000004)) {
+            transactioninfo_ = java.util.Collections.unmodifiableList(transactioninfo_);
+            bitField0_ = (bitField0_ & ~0x00000004);
+          }
+          result.transactioninfo_ = transactioninfo_;
+        } else {
+          result.transactioninfo_ = transactioninfoBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.tron.protos.Protocol.TransactionRet) {
+          return mergeFrom((org.tron.protos.Protocol.TransactionRet)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(org.tron.protos.Protocol.TransactionRet other) {
+        if (other == org.tron.protos.Protocol.TransactionRet.getDefaultInstance()) return this;
+        if (other.getBlockNumber() != 0L) {
+          setBlockNumber(other.getBlockNumber());
+        }
+        if (other.getBlockTimeStamp() != 0L) {
+          setBlockTimeStamp(other.getBlockTimeStamp());
+        }
+        if (transactioninfoBuilder_ == null) {
+          if (!other.transactioninfo_.isEmpty()) {
+            if (transactioninfo_.isEmpty()) {
+              transactioninfo_ = other.transactioninfo_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+            } else {
+              ensureTransactioninfoIsMutable();
+              transactioninfo_.addAll(other.transactioninfo_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.transactioninfo_.isEmpty()) {
+            if (transactioninfoBuilder_.isEmpty()) {
+              transactioninfoBuilder_.dispose();
+              transactioninfoBuilder_ = null;
+              transactioninfo_ = other.transactioninfo_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+              transactioninfoBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getTransactioninfoFieldBuilder() : null;
+            } else {
+              transactioninfoBuilder_.addAllMessages(other.transactioninfo_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        org.tron.protos.Protocol.TransactionRet parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (org.tron.protos.Protocol.TransactionRet) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private long blockNumber_ ;
+      /**
+       * <code>int64 blockNumber = 1;</code>
+       */
+      public long getBlockNumber() {
+        return blockNumber_;
+      }
+      /**
+       * <code>int64 blockNumber = 1;</code>
+       */
+      public Builder setBlockNumber(long value) {
+        
+        blockNumber_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 blockNumber = 1;</code>
+       */
+      public Builder clearBlockNumber() {
+        
+        blockNumber_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long blockTimeStamp_ ;
+      /**
+       * <code>int64 blockTimeStamp = 2;</code>
+       */
+      public long getBlockTimeStamp() {
+        return blockTimeStamp_;
+      }
+      /**
+       * <code>int64 blockTimeStamp = 2;</code>
+       */
+      public Builder setBlockTimeStamp(long value) {
+        
+        blockTimeStamp_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 blockTimeStamp = 2;</code>
+       */
+      public Builder clearBlockTimeStamp() {
+        
+        blockTimeStamp_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<org.tron.protos.Protocol.TransactionInfo> transactioninfo_ =
+        java.util.Collections.emptyList();
+      private void ensureTransactioninfoIsMutable() {
+        if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+          transactioninfo_ = new java.util.ArrayList<org.tron.protos.Protocol.TransactionInfo>(transactioninfo_);
+          bitField0_ |= 0x00000004;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          org.tron.protos.Protocol.TransactionInfo, org.tron.protos.Protocol.TransactionInfo.Builder, org.tron.protos.Protocol.TransactionInfoOrBuilder> transactioninfoBuilder_;
+
+      /**
+       * <code>repeated .protocol.TransactionInfo transactioninfo = 3;</code>
+       */
+      public java.util.List<org.tron.protos.Protocol.TransactionInfo> getTransactioninfoList() {
+        if (transactioninfoBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(transactioninfo_);
+        } else {
+          return transactioninfoBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .protocol.TransactionInfo transactioninfo = 3;</code>
+       */
+      public int getTransactioninfoCount() {
+        if (transactioninfoBuilder_ == null) {
+          return transactioninfo_.size();
+        } else {
+          return transactioninfoBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .protocol.TransactionInfo transactioninfo = 3;</code>
+       */
+      public org.tron.protos.Protocol.TransactionInfo getTransactioninfo(int index) {
+        if (transactioninfoBuilder_ == null) {
+          return transactioninfo_.get(index);
+        } else {
+          return transactioninfoBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .protocol.TransactionInfo transactioninfo = 3;</code>
+       */
+      public Builder setTransactioninfo(
+          int index, org.tron.protos.Protocol.TransactionInfo value) {
+        if (transactioninfoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureTransactioninfoIsMutable();
+          transactioninfo_.set(index, value);
+          onChanged();
+        } else {
+          transactioninfoBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .protocol.TransactionInfo transactioninfo = 3;</code>
+       */
+      public Builder setTransactioninfo(
+          int index, org.tron.protos.Protocol.TransactionInfo.Builder builderForValue) {
+        if (transactioninfoBuilder_ == null) {
+          ensureTransactioninfoIsMutable();
+          transactioninfo_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          transactioninfoBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .protocol.TransactionInfo transactioninfo = 3;</code>
+       */
+      public Builder addTransactioninfo(org.tron.protos.Protocol.TransactionInfo value) {
+        if (transactioninfoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureTransactioninfoIsMutable();
+          transactioninfo_.add(value);
+          onChanged();
+        } else {
+          transactioninfoBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .protocol.TransactionInfo transactioninfo = 3;</code>
+       */
+      public Builder addTransactioninfo(
+          int index, org.tron.protos.Protocol.TransactionInfo value) {
+        if (transactioninfoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureTransactioninfoIsMutable();
+          transactioninfo_.add(index, value);
+          onChanged();
+        } else {
+          transactioninfoBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .protocol.TransactionInfo transactioninfo = 3;</code>
+       */
+      public Builder addTransactioninfo(
+          org.tron.protos.Protocol.TransactionInfo.Builder builderForValue) {
+        if (transactioninfoBuilder_ == null) {
+          ensureTransactioninfoIsMutable();
+          transactioninfo_.add(builderForValue.build());
+          onChanged();
+        } else {
+          transactioninfoBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .protocol.TransactionInfo transactioninfo = 3;</code>
+       */
+      public Builder addTransactioninfo(
+          int index, org.tron.protos.Protocol.TransactionInfo.Builder builderForValue) {
+        if (transactioninfoBuilder_ == null) {
+          ensureTransactioninfoIsMutable();
+          transactioninfo_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          transactioninfoBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .protocol.TransactionInfo transactioninfo = 3;</code>
+       */
+      public Builder addAllTransactioninfo(
+          java.lang.Iterable<? extends org.tron.protos.Protocol.TransactionInfo> values) {
+        if (transactioninfoBuilder_ == null) {
+          ensureTransactioninfoIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, transactioninfo_);
+          onChanged();
+        } else {
+          transactioninfoBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .protocol.TransactionInfo transactioninfo = 3;</code>
+       */
+      public Builder clearTransactioninfo() {
+        if (transactioninfoBuilder_ == null) {
+          transactioninfo_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
+          onChanged();
+        } else {
+          transactioninfoBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .protocol.TransactionInfo transactioninfo = 3;</code>
+       */
+      public Builder removeTransactioninfo(int index) {
+        if (transactioninfoBuilder_ == null) {
+          ensureTransactioninfoIsMutable();
+          transactioninfo_.remove(index);
+          onChanged();
+        } else {
+          transactioninfoBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .protocol.TransactionInfo transactioninfo = 3;</code>
+       */
+      public org.tron.protos.Protocol.TransactionInfo.Builder getTransactioninfoBuilder(
+          int index) {
+        return getTransactioninfoFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .protocol.TransactionInfo transactioninfo = 3;</code>
+       */
+      public org.tron.protos.Protocol.TransactionInfoOrBuilder getTransactioninfoOrBuilder(
+          int index) {
+        if (transactioninfoBuilder_ == null) {
+          return transactioninfo_.get(index);  } else {
+          return transactioninfoBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .protocol.TransactionInfo transactioninfo = 3;</code>
+       */
+      public java.util.List<? extends org.tron.protos.Protocol.TransactionInfoOrBuilder> 
+           getTransactioninfoOrBuilderList() {
+        if (transactioninfoBuilder_ != null) {
+          return transactioninfoBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(transactioninfo_);
+        }
+      }
+      /**
+       * <code>repeated .protocol.TransactionInfo transactioninfo = 3;</code>
+       */
+      public org.tron.protos.Protocol.TransactionInfo.Builder addTransactioninfoBuilder() {
+        return getTransactioninfoFieldBuilder().addBuilder(
+            org.tron.protos.Protocol.TransactionInfo.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .protocol.TransactionInfo transactioninfo = 3;</code>
+       */
+      public org.tron.protos.Protocol.TransactionInfo.Builder addTransactioninfoBuilder(
+          int index) {
+        return getTransactioninfoFieldBuilder().addBuilder(
+            index, org.tron.protos.Protocol.TransactionInfo.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .protocol.TransactionInfo transactioninfo = 3;</code>
+       */
+      public java.util.List<org.tron.protos.Protocol.TransactionInfo.Builder> 
+           getTransactioninfoBuilderList() {
+        return getTransactioninfoFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          org.tron.protos.Protocol.TransactionInfo, org.tron.protos.Protocol.TransactionInfo.Builder, org.tron.protos.Protocol.TransactionInfoOrBuilder> 
+          getTransactioninfoFieldBuilder() {
+        if (transactioninfoBuilder_ == null) {
+          transactioninfoBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              org.tron.protos.Protocol.TransactionInfo, org.tron.protos.Protocol.TransactionInfo.Builder, org.tron.protos.Protocol.TransactionInfoOrBuilder>(
+                  transactioninfo_,
+                  ((bitField0_ & 0x00000004) == 0x00000004),
+                  getParentForChildren(),
+                  isClean());
+          transactioninfo_ = null;
+        }
+        return transactioninfoBuilder_;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:protocol.TransactionRet)
+    }
+
+    // @@protoc_insertion_point(class_scope:protocol.TransactionRet)
+    private static final org.tron.protos.Protocol.TransactionRet DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new org.tron.protos.Protocol.TransactionRet();
+    }
+
+    public static org.tron.protos.Protocol.TransactionRet getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<TransactionRet>
+        PARSER = new com.google.protobuf.AbstractParser<TransactionRet>() {
+      public TransactionRet parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new TransactionRet(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<TransactionRet> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<TransactionRet> getParserForType() {
+      return PARSER;
+    }
+
+    public org.tron.protos.Protocol.TransactionRet getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -60446,6 +61471,11 @@ public final class Protocol {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_protocol_TransactionInfo_Log_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_protocol_TransactionRet_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_protocol_TransactionRet_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_protocol_Transactions_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -60702,14 +61732,14 @@ public final class Protocol {
       "(\003\022\032\n\022energy_usage_total\030\004 \001(\003\022\021\n\tnet_us" +
       "age\030\005 \001(\003\022\017\n\007net_fee\030\006 \001(\003\022;\n\006result\030\007 \001" +
       "(\0162+.protocol.Transaction.Result.contrac" +
-      "tResult\"\253\020\n\013Transaction\022+\n\010raw_data\030\001 \001(" +
+      "tResult\"\353\020\n\013Transaction\022+\n\010raw_data\030\001 \001(" +
       "\0132\031.protocol.Transaction.raw\022\021\n\tsignatur" +
       "e\030\002 \003(\014\022)\n\003ret\030\005 \003(\0132\034.protocol.Transact" +
-      "ion.Result\032\202\010\n\010Contract\0229\n\004type\030\001 \001(\0162+." +
+      "ion.Result\032\240\010\n\010Contract\0229\n\004type\030\001 \001(\0162+." +
       "protocol.Transaction.Contract.ContractTy" +
       "pe\022\'\n\tparameter\030\002 \001(\0132\024.google.protobuf." +
       "Any\022\020\n\010provider\030\003 \001(\014\022\024\n\014ContractName\030\004 " +
-      "\001(\014\022\025\n\rPermission_id\030\005 \001(\005\"\322\006\n\014ContractT" +
+      "\001(\014\022\025\n\rPermission_id\030\005 \001(\005\"\360\006\n\014ContractT" +
       "ype\022\031\n\025AccountCreateContract\020\000\022\024\n\020Transf" +
       "erContract\020\001\022\031\n\025TransferAssetContract\020\002\022" +
       "\025\n\021VoteAssetContract\020\003\022\027\n\023VoteWitnessCon" +
@@ -60730,188 +61760,193 @@ public final class Protocol {
       "ract\020*\022\034\n\030ExchangeWithdrawContract\020+\022\037\n\033" +
       "ExchangeTransactionContract\020,\022\035\n\031UpdateE" +
       "nergyLimitContract\020-\022#\n\037AccountPermissio" +
-      "nUpdateContract\020.\022\024\n\020ClearABIContract\0200\032" +
-      "\254\005\n\006Result\022\013\n\003fee\030\001 \001(\003\022.\n\003ret\030\002 \001(\0162!.p" +
-      "rotocol.Transaction.Result.code\022@\n\013contr" +
-      "actRet\030\003 \001(\0162+.protocol.Transaction.Resu" +
-      "lt.contractResult\022\024\n\014assetIssueID\030\016 \001(\t\022" +
-      "\027\n\017withdraw_amount\030\017 \001(\003\022\027\n\017unfreeze_amo" +
-      "unt\030\020 \001(\003\022 \n\030exchange_received_amount\030\022 " +
-      "\001(\003\022&\n\036exchange_inject_another_amount\030\023 " +
-      "\001(\003\022(\n exchange_withdraw_another_amount\030" +
-      "\024 \001(\003\022\023\n\013exchange_id\030\025 \001(\003\"\036\n\004code\022\n\n\006SU" +
-      "CESS\020\000\022\n\n\006FAILED\020\001\"\261\002\n\016contractResult\022\013\n" +
-      "\007DEFAULT\020\000\022\013\n\007SUCCESS\020\001\022\n\n\006REVERT\020\002\022\030\n\024B" +
-      "AD_JUMP_DESTINATION\020\003\022\021\n\rOUT_OF_MEMORY\020\004" +
-      "\022\030\n\024PRECOMPILED_CONTRACT\020\005\022\023\n\017STACK_TOO_" +
-      "SMALL\020\006\022\023\n\017STACK_TOO_LARGE\020\007\022\025\n\021ILLEGAL_" +
-      "OPERATION\020\010\022\022\n\016STACK_OVERFLOW\020\t\022\021\n\rOUT_O" +
-      "F_ENERGY\020\n\022\017\n\013OUT_OF_TIME\020\013\022\027\n\023JVM_STACK" +
-      "_OVER_FLOW\020\014\022\013\n\007UNKNOWN\020\r\022\023\n\017TRANSFER_FA" +
-      "ILED\020\016\032\374\001\n\003raw\022\027\n\017ref_block_bytes\030\001 \001(\014\022" +
-      "\025\n\rref_block_num\030\003 \001(\003\022\026\n\016ref_block_hash" +
-      "\030\004 \001(\014\022\022\n\nexpiration\030\010 \001(\003\022\"\n\005auths\030\t \003(" +
-      "\0132\023.protocol.authority\022\014\n\004data\030\n \001(\014\0220\n\010" +
-      "contract\030\013 \003(\0132\036.protocol.Transaction.Co" +
-      "ntract\022\017\n\007scripts\030\014 \001(\014\022\021\n\ttimestamp\030\016 \001" +
-      "(\003\022\021\n\tfee_limit\030\022 \001(\003\"\212\005\n\017TransactionInf" +
-      "o\022\n\n\002id\030\001 \001(\014\022\013\n\003fee\030\002 \001(\003\022\023\n\013blockNumbe" +
-      "r\030\003 \001(\003\022\026\n\016blockTimeStamp\030\004 \001(\003\022\026\n\016contr" +
-      "actResult\030\005 \003(\014\022\030\n\020contract_address\030\006 \001(" +
-      "\014\022*\n\007receipt\030\007 \001(\0132\031.protocol.ResourceRe" +
-      "ceipt\022*\n\003log\030\010 \003(\0132\035.protocol.Transactio" +
-      "nInfo.Log\022.\n\006result\030\t \001(\0162\036.protocol.Tra" +
-      "nsactionInfo.code\022\022\n\nresMessage\030\n \001(\014\022\024\n" +
-      "\014assetIssueID\030\016 \001(\t\022\027\n\017withdraw_amount\030\017" +
-      " \001(\003\022\027\n\017unfreeze_amount\030\020 \001(\003\022<\n\025interna" +
-      "l_transactions\030\021 \003(\0132\035.protocol.Internal" +
-      "Transaction\022 \n\030exchange_received_amount\030" +
-      "\022 \001(\003\022&\n\036exchange_inject_another_amount\030" +
-      "\023 \001(\003\022(\n exchange_withdraw_another_amoun" +
-      "t\030\024 \001(\003\022\023\n\013exchange_id\030\025 \001(\003\0324\n\003Log\022\017\n\007a" +
-      "ddress\030\001 \001(\014\022\016\n\006topics\030\002 \003(\014\022\014\n\004data\030\003 \001" +
-      "(\014\"\036\n\004code\022\n\n\006SUCESS\020\000\022\n\n\006FAILED\020\001\";\n\014Tr" +
-      "ansactions\022+\n\014transactions\030\001 \003(\0132\025.proto" +
-      "col.Transaction\"Q\n\017TransactionSign\022*\n\013tr" +
-      "ansaction\030\001 \001(\0132\025.protocol.Transaction\022\022" +
-      "\n\nprivateKey\030\002 \001(\014\"\200\002\n\013BlockHeader\022+\n\010ra" +
-      "w_data\030\001 \001(\0132\031.protocol.BlockHeader.raw\022" +
-      "\031\n\021witness_signature\030\002 \001(\014\032\250\001\n\003raw\022\021\n\tti" +
-      "mestamp\030\001 \001(\003\022\022\n\ntxTrieRoot\030\002 \001(\014\022\022\n\npar" +
-      "entHash\030\003 \001(\014\022\016\n\006number\030\007 \001(\003\022\022\n\nwitness" +
-      "_id\030\010 \001(\003\022\027\n\017witness_address\030\t \001(\014\022\017\n\007ve" +
-      "rsion\030\n \001(\005\022\030\n\020accountStateRoot\030\013 \001(\014\"a\n" +
-      "\005Block\022+\n\014transactions\030\001 \003(\0132\025.protocol." +
-      "Transaction\022+\n\014block_header\030\002 \001(\0132\025.prot" +
-      "ocol.BlockHeader\"|\n\016ChainInventory\022-\n\003id" +
-      "s\030\001 \003(\0132 .protocol.ChainInventory.BlockI" +
-      "d\022\022\n\nremain_num\030\002 \001(\003\032\'\n\007BlockId\022\014\n\004hash" +
-      "\030\001 \001(\014\022\016\n\006number\030\002 \001(\003\"\277\001\n\016BlockInventor" +
-      "y\022-\n\003ids\030\001 \003(\0132 .protocol.BlockInventory" +
-      ".BlockId\022+\n\004type\030\002 \001(\0162\035.protocol.BlockI" +
-      "nventory.Type\032\'\n\007BlockId\022\014\n\004hash\030\001 \001(\014\022\016" +
-      "\n\006number\030\002 \001(\003\"(\n\004Type\022\010\n\004SYNC\020\000\022\013\n\007ADVT" +
-      "ISE\020\001\022\t\n\005FETCH\020\002\"n\n\tInventory\022/\n\004type\030\001 " +
-      "\001(\0162!.protocol.Inventory.InventoryType\022\013" +
-      "\n\003ids\030\002 \003(\014\"#\n\rInventoryType\022\007\n\003TRX\020\000\022\t\n" +
-      "\005BLOCK\020\001\"\345\001\n\005Items\022&\n\004type\030\001 \001(\0162\030.proto" +
-      "col.Items.ItemType\022\037\n\006blocks\030\002 \003(\0132\017.pro" +
-      "tocol.Block\022,\n\rblock_headers\030\003 \003(\0132\025.pro" +
-      "tocol.BlockHeader\022+\n\014transactions\030\004 \003(\0132" +
-      "\025.protocol.Transaction\"8\n\010ItemType\022\007\n\003ER" +
-      "R\020\000\022\007\n\003TRX\020\001\022\t\n\005BLOCK\020\002\022\017\n\013BLOCKHEADER\020\003" +
-      "\"4\n\021DynamicProperties\022\037\n\027last_solidity_b" +
-      "lock_num\030\001 \001(\003\"9\n\021DisconnectMessage\022$\n\006r" +
-      "eason\030\001 \001(\0162\024.protocol.ReasonCode\"\240\002\n\014He" +
-      "lloMessage\022 \n\004from\030\001 \001(\0132\022.protocol.Endp" +
-      "oint\022\017\n\007version\030\002 \001(\005\022\021\n\ttimestamp\030\003 \001(\003" +
-      "\0226\n\016genesisBlockId\030\004 \001(\0132\036.protocol.Hell" +
-      "oMessage.BlockId\0224\n\014solidBlockId\030\005 \001(\0132\036" +
-      ".protocol.HelloMessage.BlockId\0223\n\013headBl" +
-      "ockId\030\006 \001(\0132\036.protocol.HelloMessage.Bloc" +
-      "kId\032\'\n\007BlockId\022\014\n\004hash\030\001 \001(\014\022\016\n\006number\030\002" +
-      " \001(\003\"\203\007\n\rSmartContract\022\026\n\016origin_address" +
-      "\030\001 \001(\014\022\030\n\020contract_address\030\002 \001(\014\022(\n\003abi\030" +
-      "\003 \001(\0132\033.protocol.SmartContract.ABI\022\020\n\010by" +
-      "tecode\030\004 \001(\014\022\022\n\ncall_value\030\005 \001(\003\022%\n\035cons" +
-      "ume_user_resource_percent\030\006 \001(\003\022\014\n\004name\030" +
-      "\007 \001(\t\022\033\n\023origin_energy_limit\030\010 \001(\003\022\021\n\tco" +
-      "de_hash\030\t \001(\014\022\020\n\010trx_hash\030\n \001(\014\032\370\004\n\003ABI\022" +
-      "1\n\006entrys\030\001 \003(\0132!.protocol.SmartContract" +
-      ".ABI.Entry\032\275\004\n\005Entry\022\021\n\tanonymous\030\001 \001(\010\022" +
-      "\020\n\010constant\030\002 \001(\010\022\014\n\004name\030\003 \001(\t\0227\n\006input" +
-      "s\030\004 \003(\0132\'.protocol.SmartContract.ABI.Ent" +
-      "ry.Param\0228\n\007outputs\030\005 \003(\0132\'.protocol.Sma" +
-      "rtContract.ABI.Entry.Param\0229\n\004type\030\006 \001(\016" +
-      "2+.protocol.SmartContract.ABI.Entry.Entr" +
-      "yType\022\017\n\007payable\030\007 \001(\010\022N\n\017stateMutabilit" +
-      "y\030\010 \001(\01625.protocol.SmartContract.ABI.Ent" +
-      "ry.StateMutabilityType\0324\n\005Param\022\017\n\007index" +
-      "ed\030\001 \001(\010\022\014\n\004name\030\002 \001(\t\022\014\n\004type\030\003 \001(\t\"Y\n\t" +
-      "EntryType\022\024\n\020UnknownEntryType\020\000\022\017\n\013Const" +
-      "ructor\020\001\022\014\n\010Function\020\002\022\t\n\005Event\020\003\022\014\n\010Fal" +
-      "lback\020\004\"a\n\023StateMutabilityType\022\031\n\025Unknow" +
-      "nMutabilityType\020\000\022\010\n\004Pure\020\001\022\010\n\004View\020\002\022\016\n" +
-      "\nNonpayable\020\003\022\013\n\007Payable\020\004\"\360\001\n\023InternalT" +
-      "ransaction\022\014\n\004hash\030\001 \001(\014\022\026\n\016caller_addre" +
-      "ss\030\002 \001(\014\022\032\n\022transferTo_address\030\003 \001(\014\022B\n\r" +
-      "callValueInfo\030\004 \003(\0132+.protocol.InternalT" +
-      "ransaction.CallValueInfo\022\014\n\004note\030\005 \001(\014\022\020" +
-      "\n\010rejected\030\006 \001(\010\0323\n\rCallValueInfo\022\021\n\tcal" +
-      "lValue\030\001 \001(\003\022\017\n\007tokenId\030\002 \001(\t\"Z\n\035Delegat" +
-      "edResourceAccountIndex\022\017\n\007account\030\001 \001(\014\022" +
-      "\024\n\014fromAccounts\030\002 \003(\014\022\022\n\ntoAccounts\030\003 \003(" +
-      "\014\"\240\021\n\010NodeInfo\022\024\n\014beginSyncNum\030\001 \001(\003\022\r\n\005" +
-      "block\030\002 \001(\t\022\025\n\rsolidityBlock\030\003 \001(\t\022\033\n\023cu" +
-      "rrentConnectCount\030\004 \001(\005\022\032\n\022activeConnect" +
-      "Count\030\005 \001(\005\022\033\n\023passiveConnectCount\030\006 \001(\005" +
-      "\022\021\n\ttotalFlow\030\007 \001(\003\0221\n\014peerInfoList\030\010 \003(" +
-      "\0132\033.protocol.NodeInfo.PeerInfo\0229\n\016config" +
-      "NodeInfo\030\t \001(\0132!.protocol.NodeInfo.Confi" +
-      "gNodeInfo\0223\n\013machineInfo\030\n \001(\0132\036.protoco" +
-      "l.NodeInfo.MachineInfo\022H\n\023cheatWitnessIn" +
-      "foMap\030\013 \003(\0132+.protocol.NodeInfo.CheatWit" +
-      "nessInfoMapEntry\032:\n\030CheatWitnessInfoMapE" +
-      "ntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\032\315\004\n" +
-      "\010PeerInfo\022\025\n\rlastSyncBlock\030\001 \001(\t\022\021\n\trema" +
-      "inNum\030\002 \001(\003\022\033\n\023lastBlockUpdateTime\030\003 \001(\003" +
-      "\022\020\n\010syncFlag\030\004 \001(\010\022\037\n\027headBlockTimeWeBot" +
-      "hHave\030\005 \001(\003\022\030\n\020needSyncFromPeer\030\006 \001(\010\022\026\n" +
-      "\016needSyncFromUs\030\007 \001(\010\022\014\n\004host\030\010 \001(\t\022\014\n\004p" +
-      "ort\030\t \001(\005\022\016\n\006nodeId\030\n \001(\t\022\023\n\013connectTime" +
-      "\030\013 \001(\003\022\022\n\navgLatency\030\014 \001(\001\022\027\n\017syncToFetc" +
-      "hSize\030\r \001(\005\022\036\n\026syncToFetchSizePeekNum\030\016 " +
-      "\001(\003\022\036\n\026syncBlockRequestedSize\030\017 \001(\005\022\025\n\ru" +
-      "nFetchSynNum\030\020 \001(\003\022\027\n\017blockInPorcSize\030\021 " +
-      "\001(\005\022\033\n\023headBlockWeBothHave\030\022 \001(\t\022\020\n\010isAc" +
-      "tive\030\023 \001(\010\022\r\n\005score\030\024 \001(\005\022\021\n\tnodeCount\030\025" +
-      " \001(\005\022\016\n\006inFlow\030\026 \001(\003\022\027\n\017disconnectTimes\030" +
-      "\027 \001(\005\022\035\n\025localDisconnectReason\030\030 \001(\t\022\036\n\026" +
-      "remoteDisconnectReason\030\031 \001(\t\032\345\003\n\016ConfigN" +
-      "odeInfo\022\023\n\013codeVersion\030\001 \001(\t\022\022\n\np2pVersi" +
-      "on\030\002 \001(\t\022\022\n\nlistenPort\030\003 \001(\005\022\026\n\016discover" +
-      "Enable\030\004 \001(\010\022\026\n\016activeNodeSize\030\005 \001(\005\022\027\n\017" +
-      "passiveNodeSize\030\006 \001(\005\022\024\n\014sendNodeSize\030\007 " +
-      "\001(\005\022\027\n\017maxConnectCount\030\010 \001(\005\022\035\n\025sameIpMa" +
-      "xConnectCount\030\t \001(\005\022\030\n\020backupListenPort\030" +
-      "\n \001(\005\022\030\n\020backupMemberSize\030\013 \001(\005\022\026\n\016backu" +
-      "pPriority\030\014 \001(\005\022\021\n\tdbVersion\030\r \001(\005\022\034\n\024mi" +
-      "nParticipationRate\030\016 \001(\005\022\027\n\017supportConst" +
-      "ant\030\017 \001(\010\022\024\n\014minTimeRatio\030\020 \001(\001\022\024\n\014maxTi" +
-      "meRatio\030\021 \001(\001\022 \n\030allowCreationOfContract" +
-      "s\030\022 \001(\003\022\033\n\023allowAdaptiveEnergy\030\023 \001(\003\032\215\005\n" +
-      "\013MachineInfo\022\023\n\013threadCount\030\001 \001(\005\022\033\n\023dea" +
-      "dLockThreadCount\030\002 \001(\005\022\020\n\010cpuCount\030\003 \001(\005" +
-      "\022\023\n\013totalMemory\030\004 \001(\003\022\022\n\nfreeMemory\030\005 \001(" +
-      "\003\022\017\n\007cpuRate\030\006 \001(\001\022\023\n\013javaVersion\030\007 \001(\t\022" +
-      "\016\n\006osName\030\010 \001(\t\022\027\n\017jvmTotalMemoery\030\t \001(\003" +
-      "\022\025\n\rjvmFreeMemory\030\n \001(\003\022\026\n\016processCpuRat" +
-      "e\030\013 \001(\001\022I\n\022memoryDescInfoList\030\014 \003(\0132-.pr" +
-      "otocol.NodeInfo.MachineInfo.MemoryDescIn" +
-      "fo\022Q\n\026deadLockThreadInfoList\030\r \003(\01321.pro" +
-      "tocol.NodeInfo.MachineInfo.DeadLockThrea" +
-      "dInfo\032c\n\016MemoryDescInfo\022\014\n\004name\030\001 \001(\t\022\020\n" +
-      "\010initSize\030\002 \001(\003\022\017\n\007useSize\030\003 \001(\003\022\017\n\007maxS" +
-      "ize\030\004 \001(\003\022\017\n\007useRate\030\005 \001(\001\032\217\001\n\022DeadLockT" +
-      "hreadInfo\022\014\n\004name\030\001 \001(\t\022\020\n\010lockName\030\002 \001(" +
-      "\t\022\021\n\tlockOwner\030\003 \001(\t\022\r\n\005state\030\004 \001(\t\022\021\n\tb" +
-      "lockTime\030\005 \001(\003\022\020\n\010waitTime\030\006 \001(\003\022\022\n\nstac" +
-      "kTrace\030\007 \001(\t*7\n\013AccountType\022\n\n\006Normal\020\000\022" +
-      "\016\n\nAssetIssue\020\001\022\014\n\010Contract\020\002*\307\003\n\nReason" +
-      "Code\022\r\n\tREQUESTED\020\000\022\020\n\014BAD_PROTOCOL\020\002\022\022\n" +
-      "\016TOO_MANY_PEERS\020\004\022\022\n\016DUPLICATE_PEER\020\005\022\031\n" +
-      "\025INCOMPATIBLE_PROTOCOL\020\006\022\021\n\rNULL_IDENTIT" +
-      "Y\020\007\022\020\n\014PEER_QUITING\020\010\022\027\n\023UNEXPECTED_IDEN" +
-      "TITY\020\t\022\022\n\016LOCAL_IDENTITY\020\n\022\020\n\014PING_TIMEO" +
-      "UT\020\013\022\017\n\013USER_REASON\020\020\022\t\n\005RESET\020\021\022\r\n\tSYNC" +
-      "_FAIL\020\022\022\016\n\nFETCH_FAIL\020\023\022\n\n\006BAD_TX\020\024\022\r\n\tB" +
-      "AD_BLOCK\020\025\022\n\n\006FORKED\020\026\022\016\n\nUNLINKABLE\020\027\022\030" +
-      "\n\024INCOMPATIBLE_VERSION\020\030\022\026\n\022INCOMPATIBLE" +
-      "_CHAIN\020\031\022\014\n\010TIME_OUT\020 \022\020\n\014CONNECT_FAIL\020!" +
-      "\022\037\n\033TOO_MANY_PEERS_WITH_SAME_IP\020\"\022\014\n\007UNK" +
-      "NOWN\020\377\001BF\n\017org.tron.protosB\010ProtocolZ)gi" +
-      "thub.com/tronprotocol/grpc-gateway/coreb" +
-      "\006proto3"
+      "nUpdateContract\020.\022\024\n\020ClearABIContract\0200\022" +
+      "\034\n\030ShieldedTransferContract\0203\032\316\005\n\006Result" +
+      "\022\013\n\003fee\030\001 \001(\003\022.\n\003ret\030\002 \001(\0162!.protocol.Tr" +
+      "ansaction.Result.code\022@\n\013contractRet\030\003 \001" +
+      "(\0162+.protocol.Transaction.Result.contrac" +
+      "tResult\022\024\n\014assetIssueID\030\016 \001(\t\022\027\n\017withdra" +
+      "w_amount\030\017 \001(\003\022\027\n\017unfreeze_amount\030\020 \001(\003\022" +
+      " \n\030exchange_received_amount\030\022 \001(\003\022&\n\036exc" +
+      "hange_inject_another_amount\030\023 \001(\003\022(\n exc" +
+      "hange_withdraw_another_amount\030\024 \001(\003\022\023\n\013e" +
+      "xchange_id\030\025 \001(\003\022 \n\030shielded_transaction" +
+      "_fee\030\026 \001(\003\"\036\n\004code\022\n\n\006SUCESS\020\000\022\n\n\006FAILED" +
+      "\020\001\"\261\002\n\016contractResult\022\013\n\007DEFAULT\020\000\022\013\n\007SU" +
+      "CCESS\020\001\022\n\n\006REVERT\020\002\022\030\n\024BAD_JUMP_DESTINAT" +
+      "ION\020\003\022\021\n\rOUT_OF_MEMORY\020\004\022\030\n\024PRECOMPILED_" +
+      "CONTRACT\020\005\022\023\n\017STACK_TOO_SMALL\020\006\022\023\n\017STACK" +
+      "_TOO_LARGE\020\007\022\025\n\021ILLEGAL_OPERATION\020\010\022\022\n\016S" +
+      "TACK_OVERFLOW\020\t\022\021\n\rOUT_OF_ENERGY\020\n\022\017\n\013OU" +
+      "T_OF_TIME\020\013\022\027\n\023JVM_STACK_OVER_FLOW\020\014\022\013\n\007" +
+      "UNKNOWN\020\r\022\023\n\017TRANSFER_FAILED\020\016\032\374\001\n\003raw\022\027" +
+      "\n\017ref_block_bytes\030\001 \001(\014\022\025\n\rref_block_num" +
+      "\030\003 \001(\003\022\026\n\016ref_block_hash\030\004 \001(\014\022\022\n\nexpira" +
+      "tion\030\010 \001(\003\022\"\n\005auths\030\t \003(\0132\023.protocol.aut" +
+      "hority\022\014\n\004data\030\n \001(\014\0220\n\010contract\030\013 \003(\0132\036" +
+      ".protocol.Transaction.Contract\022\017\n\007script" +
+      "s\030\014 \001(\014\022\021\n\ttimestamp\030\016 \001(\003\022\021\n\tfee_limit\030" +
+      "\022 \001(\003\"\254\005\n\017TransactionInfo\022\n\n\002id\030\001 \001(\014\022\013\n" +
+      "\003fee\030\002 \001(\003\022\023\n\013blockNumber\030\003 \001(\003\022\026\n\016block" +
+      "TimeStamp\030\004 \001(\003\022\026\n\016contractResult\030\005 \003(\014\022" +
+      "\030\n\020contract_address\030\006 \001(\014\022*\n\007receipt\030\007 \001" +
+      "(\0132\031.protocol.ResourceReceipt\022*\n\003log\030\010 \003" +
+      "(\0132\035.protocol.TransactionInfo.Log\022.\n\006res" +
+      "ult\030\t \001(\0162\036.protocol.TransactionInfo.cod" +
+      "e\022\022\n\nresMessage\030\n \001(\014\022\024\n\014assetIssueID\030\016 " +
+      "\001(\t\022\027\n\017withdraw_amount\030\017 \001(\003\022\027\n\017unfreeze" +
+      "_amount\030\020 \001(\003\022<\n\025internal_transactions\030\021" +
+      " \003(\0132\035.protocol.InternalTransaction\022 \n\030e" +
+      "xchange_received_amount\030\022 \001(\003\022&\n\036exchang" +
+      "e_inject_another_amount\030\023 \001(\003\022(\n exchang" +
+      "e_withdraw_another_amount\030\024 \001(\003\022\023\n\013excha" +
+      "nge_id\030\025 \001(\003\022 \n\030shielded_transaction_fee" +
+      "\030\026 \001(\003\0324\n\003Log\022\017\n\007address\030\001 \001(\014\022\016\n\006topics" +
+      "\030\002 \003(\014\022\014\n\004data\030\003 \001(\014\"\036\n\004code\022\n\n\006SUCESS\020\000" +
+      "\022\n\n\006FAILED\020\001\"q\n\016TransactionRet\022\023\n\013blockN" +
+      "umber\030\001 \001(\003\022\026\n\016blockTimeStamp\030\002 \001(\003\0222\n\017t" +
+      "ransactioninfo\030\003 \003(\0132\031.protocol.Transact" +
+      "ionInfo\";\n\014Transactions\022+\n\014transactions\030" +
+      "\001 \003(\0132\025.protocol.Transaction\"Q\n\017Transact" +
+      "ionSign\022*\n\013transaction\030\001 \001(\0132\025.protocol." +
+      "Transaction\022\022\n\nprivateKey\030\002 \001(\014\"\200\002\n\013Bloc" +
+      "kHeader\022+\n\010raw_data\030\001 \001(\0132\031.protocol.Blo" +
+      "ckHeader.raw\022\031\n\021witness_signature\030\002 \001(\014\032" +
+      "\250\001\n\003raw\022\021\n\ttimestamp\030\001 \001(\003\022\022\n\ntxTrieRoot" +
+      "\030\002 \001(\014\022\022\n\nparentHash\030\003 \001(\014\022\016\n\006number\030\007 \001" +
+      "(\003\022\022\n\nwitness_id\030\010 \001(\003\022\027\n\017witness_addres" +
+      "s\030\t \001(\014\022\017\n\007version\030\n \001(\005\022\030\n\020accountState" +
+      "Root\030\013 \001(\014\"a\n\005Block\022+\n\014transactions\030\001 \003(" +
+      "\0132\025.protocol.Transaction\022+\n\014block_header" +
+      "\030\002 \001(\0132\025.protocol.BlockHeader\"|\n\016ChainIn" +
+      "ventory\022-\n\003ids\030\001 \003(\0132 .protocol.ChainInv" +
+      "entory.BlockId\022\022\n\nremain_num\030\002 \001(\003\032\'\n\007Bl" +
+      "ockId\022\014\n\004hash\030\001 \001(\014\022\016\n\006number\030\002 \001(\003\"\277\001\n\016" +
+      "BlockInventory\022-\n\003ids\030\001 \003(\0132 .protocol.B" +
+      "lockInventory.BlockId\022+\n\004type\030\002 \001(\0162\035.pr" +
+      "otocol.BlockInventory.Type\032\'\n\007BlockId\022\014\n" +
+      "\004hash\030\001 \001(\014\022\016\n\006number\030\002 \001(\003\"(\n\004Type\022\010\n\004S" +
+      "YNC\020\000\022\013\n\007ADVTISE\020\001\022\t\n\005FETCH\020\002\"n\n\tInvento" +
+      "ry\022/\n\004type\030\001 \001(\0162!.protocol.Inventory.In" +
+      "ventoryType\022\013\n\003ids\030\002 \003(\014\"#\n\rInventoryTyp" +
+      "e\022\007\n\003TRX\020\000\022\t\n\005BLOCK\020\001\"\345\001\n\005Items\022&\n\004type\030" +
+      "\001 \001(\0162\030.protocol.Items.ItemType\022\037\n\006block" +
+      "s\030\002 \003(\0132\017.protocol.Block\022,\n\rblock_header" +
+      "s\030\003 \003(\0132\025.protocol.BlockHeader\022+\n\014transa" +
+      "ctions\030\004 \003(\0132\025.protocol.Transaction\"8\n\010I" +
+      "temType\022\007\n\003ERR\020\000\022\007\n\003TRX\020\001\022\t\n\005BLOCK\020\002\022\017\n\013" +
+      "BLOCKHEADER\020\003\"4\n\021DynamicProperties\022\037\n\027la" +
+      "st_solidity_block_num\030\001 \001(\003\"9\n\021Disconnec" +
+      "tMessage\022$\n\006reason\030\001 \001(\0162\024.protocol.Reas" +
+      "onCode\"\240\002\n\014HelloMessage\022 \n\004from\030\001 \001(\0132\022." +
+      "protocol.Endpoint\022\017\n\007version\030\002 \001(\005\022\021\n\tti" +
+      "mestamp\030\003 \001(\003\0226\n\016genesisBlockId\030\004 \001(\0132\036." +
+      "protocol.HelloMessage.BlockId\0224\n\014solidBl" +
+      "ockId\030\005 \001(\0132\036.protocol.HelloMessage.Bloc" +
+      "kId\0223\n\013headBlockId\030\006 \001(\0132\036.protocol.Hell" +
+      "oMessage.BlockId\032\'\n\007BlockId\022\014\n\004hash\030\001 \001(" +
+      "\014\022\016\n\006number\030\002 \001(\003\"\203\007\n\rSmartContract\022\026\n\016o" +
+      "rigin_address\030\001 \001(\014\022\030\n\020contract_address\030" +
+      "\002 \001(\014\022(\n\003abi\030\003 \001(\0132\033.protocol.SmartContr" +
+      "act.ABI\022\020\n\010bytecode\030\004 \001(\014\022\022\n\ncall_value\030" +
+      "\005 \001(\003\022%\n\035consume_user_resource_percent\030\006" +
+      " \001(\003\022\014\n\004name\030\007 \001(\t\022\033\n\023origin_energy_limi" +
+      "t\030\010 \001(\003\022\021\n\tcode_hash\030\t \001(\014\022\020\n\010trx_hash\030\n" +
+      " \001(\014\032\370\004\n\003ABI\0221\n\006entrys\030\001 \003(\0132!.protocol." +
+      "SmartContract.ABI.Entry\032\275\004\n\005Entry\022\021\n\tano" +
+      "nymous\030\001 \001(\010\022\020\n\010constant\030\002 \001(\010\022\014\n\004name\030\003" +
+      " \001(\t\0227\n\006inputs\030\004 \003(\0132\'.protocol.SmartCon" +
+      "tract.ABI.Entry.Param\0228\n\007outputs\030\005 \003(\0132\'" +
+      ".protocol.SmartContract.ABI.Entry.Param\022" +
+      "9\n\004type\030\006 \001(\0162+.protocol.SmartContract.A" +
+      "BI.Entry.EntryType\022\017\n\007payable\030\007 \001(\010\022N\n\017s" +
+      "tateMutability\030\010 \001(\01625.protocol.SmartCon" +
+      "tract.ABI.Entry.StateMutabilityType\0324\n\005P" +
+      "aram\022\017\n\007indexed\030\001 \001(\010\022\014\n\004name\030\002 \001(\t\022\014\n\004t" +
+      "ype\030\003 \001(\t\"Y\n\tEntryType\022\024\n\020UnknownEntryTy" +
+      "pe\020\000\022\017\n\013Constructor\020\001\022\014\n\010Function\020\002\022\t\n\005E" +
+      "vent\020\003\022\014\n\010Fallback\020\004\"a\n\023StateMutabilityT" +
+      "ype\022\031\n\025UnknownMutabilityType\020\000\022\010\n\004Pure\020\001" +
+      "\022\010\n\004View\020\002\022\016\n\nNonpayable\020\003\022\013\n\007Payable\020\004\"" +
+      "\360\001\n\023InternalTransaction\022\014\n\004hash\030\001 \001(\014\022\026\n" +
+      "\016caller_address\030\002 \001(\014\022\032\n\022transferTo_addr" +
+      "ess\030\003 \001(\014\022B\n\rcallValueInfo\030\004 \003(\0132+.proto" +
+      "col.InternalTransaction.CallValueInfo\022\014\n" +
+      "\004note\030\005 \001(\014\022\020\n\010rejected\030\006 \001(\010\0323\n\rCallVal" +
+      "ueInfo\022\021\n\tcallValue\030\001 \001(\003\022\017\n\007tokenId\030\002 \001" +
+      "(\t\"Z\n\035DelegatedResourceAccountIndex\022\017\n\007a" +
+      "ccount\030\001 \001(\014\022\024\n\014fromAccounts\030\002 \003(\014\022\022\n\nto" +
+      "Accounts\030\003 \003(\014\"\240\021\n\010NodeInfo\022\024\n\014beginSync" +
+      "Num\030\001 \001(\003\022\r\n\005block\030\002 \001(\t\022\025\n\rsolidityBloc" +
+      "k\030\003 \001(\t\022\033\n\023currentConnectCount\030\004 \001(\005\022\032\n\022" +
+      "activeConnectCount\030\005 \001(\005\022\033\n\023passiveConne" +
+      "ctCount\030\006 \001(\005\022\021\n\ttotalFlow\030\007 \001(\003\0221\n\014peer" +
+      "InfoList\030\010 \003(\0132\033.protocol.NodeInfo.PeerI" +
+      "nfo\0229\n\016configNodeInfo\030\t \001(\0132!.protocol.N" +
+      "odeInfo.ConfigNodeInfo\0223\n\013machineInfo\030\n " +
+      "\001(\0132\036.protocol.NodeInfo.MachineInfo\022H\n\023c" +
+      "heatWitnessInfoMap\030\013 \003(\0132+.protocol.Node" +
+      "Info.CheatWitnessInfoMapEntry\032:\n\030CheatWi" +
+      "tnessInfoMapEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030" +
+      "\002 \001(\t:\0028\001\032\315\004\n\010PeerInfo\022\025\n\rlastSyncBlock\030" +
+      "\001 \001(\t\022\021\n\tremainNum\030\002 \001(\003\022\033\n\023lastBlockUpd" +
+      "ateTime\030\003 \001(\003\022\020\n\010syncFlag\030\004 \001(\010\022\037\n\027headB" +
+      "lockTimeWeBothHave\030\005 \001(\003\022\030\n\020needSyncFrom" +
+      "Peer\030\006 \001(\010\022\026\n\016needSyncFromUs\030\007 \001(\010\022\014\n\004ho" +
+      "st\030\010 \001(\t\022\014\n\004port\030\t \001(\005\022\016\n\006nodeId\030\n \001(\t\022\023" +
+      "\n\013connectTime\030\013 \001(\003\022\022\n\navgLatency\030\014 \001(\001\022" +
+      "\027\n\017syncToFetchSize\030\r \001(\005\022\036\n\026syncToFetchS" +
+      "izePeekNum\030\016 \001(\003\022\036\n\026syncBlockRequestedSi" +
+      "ze\030\017 \001(\005\022\025\n\runFetchSynNum\030\020 \001(\003\022\027\n\017block" +
+      "InPorcSize\030\021 \001(\005\022\033\n\023headBlockWeBothHave\030" +
+      "\022 \001(\t\022\020\n\010isActive\030\023 \001(\010\022\r\n\005score\030\024 \001(\005\022\021" +
+      "\n\tnodeCount\030\025 \001(\005\022\016\n\006inFlow\030\026 \001(\003\022\027\n\017dis" +
+      "connectTimes\030\027 \001(\005\022\035\n\025localDisconnectRea" +
+      "son\030\030 \001(\t\022\036\n\026remoteDisconnectReason\030\031 \001(" +
+      "\t\032\345\003\n\016ConfigNodeInfo\022\023\n\013codeVersion\030\001 \001(" +
+      "\t\022\022\n\np2pVersion\030\002 \001(\t\022\022\n\nlistenPort\030\003 \001(" +
+      "\005\022\026\n\016discoverEnable\030\004 \001(\010\022\026\n\016activeNodeS" +
+      "ize\030\005 \001(\005\022\027\n\017passiveNodeSize\030\006 \001(\005\022\024\n\014se" +
+      "ndNodeSize\030\007 \001(\005\022\027\n\017maxConnectCount\030\010 \001(" +
+      "\005\022\035\n\025sameIpMaxConnectCount\030\t \001(\005\022\030\n\020back" +
+      "upListenPort\030\n \001(\005\022\030\n\020backupMemberSize\030\013" +
+      " \001(\005\022\026\n\016backupPriority\030\014 \001(\005\022\021\n\tdbVersio" +
+      "n\030\r \001(\005\022\034\n\024minParticipationRate\030\016 \001(\005\022\027\n" +
+      "\017supportConstant\030\017 \001(\010\022\024\n\014minTimeRatio\030\020" +
+      " \001(\001\022\024\n\014maxTimeRatio\030\021 \001(\001\022 \n\030allowCreat" +
+      "ionOfContracts\030\022 \001(\003\022\033\n\023allowAdaptiveEne" +
+      "rgy\030\023 \001(\003\032\215\005\n\013MachineInfo\022\023\n\013threadCount" +
+      "\030\001 \001(\005\022\033\n\023deadLockThreadCount\030\002 \001(\005\022\020\n\010c" +
+      "puCount\030\003 \001(\005\022\023\n\013totalMemory\030\004 \001(\003\022\022\n\nfr" +
+      "eeMemory\030\005 \001(\003\022\017\n\007cpuRate\030\006 \001(\001\022\023\n\013javaV" +
+      "ersion\030\007 \001(\t\022\016\n\006osName\030\010 \001(\t\022\027\n\017jvmTotal" +
+      "Memoery\030\t \001(\003\022\025\n\rjvmFreeMemory\030\n \001(\003\022\026\n\016" +
+      "processCpuRate\030\013 \001(\001\022I\n\022memoryDescInfoLi" +
+      "st\030\014 \003(\0132-.protocol.NodeInfo.MachineInfo" +
+      ".MemoryDescInfo\022Q\n\026deadLockThreadInfoLis" +
+      "t\030\r \003(\01321.protocol.NodeInfo.MachineInfo." +
+      "DeadLockThreadInfo\032c\n\016MemoryDescInfo\022\014\n\004" +
+      "name\030\001 \001(\t\022\020\n\010initSize\030\002 \001(\003\022\017\n\007useSize\030" +
+      "\003 \001(\003\022\017\n\007maxSize\030\004 \001(\003\022\017\n\007useRate\030\005 \001(\001\032" +
+      "\217\001\n\022DeadLockThreadInfo\022\014\n\004name\030\001 \001(\t\022\020\n\010" +
+      "lockName\030\002 \001(\t\022\021\n\tlockOwner\030\003 \001(\t\022\r\n\005sta" +
+      "te\030\004 \001(\t\022\021\n\tblockTime\030\005 \001(\003\022\020\n\010waitTime\030" +
+      "\006 \001(\003\022\022\n\nstackTrace\030\007 \001(\t*7\n\013AccountType" +
+      "\022\n\n\006Normal\020\000\022\016\n\nAssetIssue\020\001\022\014\n\010Contract" +
+      "\020\002*\307\003\n\nReasonCode\022\r\n\tREQUESTED\020\000\022\020\n\014BAD_" +
+      "PROTOCOL\020\002\022\022\n\016TOO_MANY_PEERS\020\004\022\022\n\016DUPLIC" +
+      "ATE_PEER\020\005\022\031\n\025INCOMPATIBLE_PROTOCOL\020\006\022\021\n" +
+      "\rNULL_IDENTITY\020\007\022\020\n\014PEER_QUITING\020\010\022\027\n\023UN" +
+      "EXPECTED_IDENTITY\020\t\022\022\n\016LOCAL_IDENTITY\020\n\022" +
+      "\020\n\014PING_TIMEOUT\020\013\022\017\n\013USER_REASON\020\020\022\t\n\005RE" +
+      "SET\020\021\022\r\n\tSYNC_FAIL\020\022\022\016\n\nFETCH_FAIL\020\023\022\n\n\006" +
+      "BAD_TX\020\024\022\r\n\tBAD_BLOCK\020\025\022\n\n\006FORKED\020\026\022\016\n\nU" +
+      "NLINKABLE\020\027\022\030\n\024INCOMPATIBLE_VERSION\020\030\022\026\n" +
+      "\022INCOMPATIBLE_CHAIN\020\031\022\014\n\010TIME_OUT\020 \022\020\n\014C" +
+      "ONNECT_FAIL\020!\022\037\n\033TOO_MANY_PEERS_WITH_SAM" +
+      "E_IP\020\"\022\014\n\007UNKNOWN\020\377\001BF\n\017org.tron.protosB" +
+      "\010ProtocolZ)github.com/tronprotocol/grpc-" +
+      "gateway/coreb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -61106,7 +62141,7 @@ public final class Protocol {
     internal_static_protocol_Transaction_Result_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protocol_Transaction_Result_descriptor,
-        new java.lang.String[] { "Fee", "Ret", "ContractRet", "AssetIssueID", "WithdrawAmount", "UnfreezeAmount", "ExchangeReceivedAmount", "ExchangeInjectAnotherAmount", "ExchangeWithdrawAnotherAmount", "ExchangeId", });
+        new java.lang.String[] { "Fee", "Ret", "ContractRet", "AssetIssueID", "WithdrawAmount", "UnfreezeAmount", "ExchangeReceivedAmount", "ExchangeInjectAnotherAmount", "ExchangeWithdrawAnotherAmount", "ExchangeId", "ShieldedTransactionFee", });
     internal_static_protocol_Transaction_raw_descriptor =
       internal_static_protocol_Transaction_descriptor.getNestedTypes().get(2);
     internal_static_protocol_Transaction_raw_fieldAccessorTable = new
@@ -61118,27 +62153,33 @@ public final class Protocol {
     internal_static_protocol_TransactionInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protocol_TransactionInfo_descriptor,
-        new java.lang.String[] { "Id", "Fee", "BlockNumber", "BlockTimeStamp", "ContractResult", "ContractAddress", "Receipt", "Log", "Result", "ResMessage", "AssetIssueID", "WithdrawAmount", "UnfreezeAmount", "InternalTransactions", "ExchangeReceivedAmount", "ExchangeInjectAnotherAmount", "ExchangeWithdrawAnotherAmount", "ExchangeId", });
+        new java.lang.String[] { "Id", "Fee", "BlockNumber", "BlockTimeStamp", "ContractResult", "ContractAddress", "Receipt", "Log", "Result", "ResMessage", "AssetIssueID", "WithdrawAmount", "UnfreezeAmount", "InternalTransactions", "ExchangeReceivedAmount", "ExchangeInjectAnotherAmount", "ExchangeWithdrawAnotherAmount", "ExchangeId", "ShieldedTransactionFee", });
     internal_static_protocol_TransactionInfo_Log_descriptor =
       internal_static_protocol_TransactionInfo_descriptor.getNestedTypes().get(0);
     internal_static_protocol_TransactionInfo_Log_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protocol_TransactionInfo_Log_descriptor,
         new java.lang.String[] { "Address", "Topics", "Data", });
-    internal_static_protocol_Transactions_descriptor =
+    internal_static_protocol_TransactionRet_descriptor =
       getDescriptor().getMessageTypes().get(18);
+    internal_static_protocol_TransactionRet_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_protocol_TransactionRet_descriptor,
+        new java.lang.String[] { "BlockNumber", "BlockTimeStamp", "Transactioninfo", });
+    internal_static_protocol_Transactions_descriptor =
+      getDescriptor().getMessageTypes().get(19);
     internal_static_protocol_Transactions_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protocol_Transactions_descriptor,
         new java.lang.String[] { "Transactions", });
     internal_static_protocol_TransactionSign_descriptor =
-      getDescriptor().getMessageTypes().get(19);
+      getDescriptor().getMessageTypes().get(20);
     internal_static_protocol_TransactionSign_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protocol_TransactionSign_descriptor,
         new java.lang.String[] { "Transaction", "PrivateKey", });
     internal_static_protocol_BlockHeader_descriptor =
-      getDescriptor().getMessageTypes().get(20);
+      getDescriptor().getMessageTypes().get(21);
     internal_static_protocol_BlockHeader_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protocol_BlockHeader_descriptor,
@@ -61150,13 +62191,13 @@ public final class Protocol {
         internal_static_protocol_BlockHeader_raw_descriptor,
         new java.lang.String[] { "Timestamp", "TxTrieRoot", "ParentHash", "Number", "WitnessId", "WitnessAddress", "Version", "AccountStateRoot", });
     internal_static_protocol_Block_descriptor =
-      getDescriptor().getMessageTypes().get(21);
+      getDescriptor().getMessageTypes().get(22);
     internal_static_protocol_Block_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protocol_Block_descriptor,
         new java.lang.String[] { "Transactions", "BlockHeader", });
     internal_static_protocol_ChainInventory_descriptor =
-      getDescriptor().getMessageTypes().get(22);
+      getDescriptor().getMessageTypes().get(23);
     internal_static_protocol_ChainInventory_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protocol_ChainInventory_descriptor,
@@ -61168,7 +62209,7 @@ public final class Protocol {
         internal_static_protocol_ChainInventory_BlockId_descriptor,
         new java.lang.String[] { "Hash", "Number", });
     internal_static_protocol_BlockInventory_descriptor =
-      getDescriptor().getMessageTypes().get(23);
+      getDescriptor().getMessageTypes().get(24);
     internal_static_protocol_BlockInventory_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protocol_BlockInventory_descriptor,
@@ -61180,31 +62221,31 @@ public final class Protocol {
         internal_static_protocol_BlockInventory_BlockId_descriptor,
         new java.lang.String[] { "Hash", "Number", });
     internal_static_protocol_Inventory_descriptor =
-      getDescriptor().getMessageTypes().get(24);
+      getDescriptor().getMessageTypes().get(25);
     internal_static_protocol_Inventory_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protocol_Inventory_descriptor,
         new java.lang.String[] { "Type", "Ids", });
     internal_static_protocol_Items_descriptor =
-      getDescriptor().getMessageTypes().get(25);
+      getDescriptor().getMessageTypes().get(26);
     internal_static_protocol_Items_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protocol_Items_descriptor,
         new java.lang.String[] { "Type", "Blocks", "BlockHeaders", "Transactions", });
     internal_static_protocol_DynamicProperties_descriptor =
-      getDescriptor().getMessageTypes().get(26);
+      getDescriptor().getMessageTypes().get(27);
     internal_static_protocol_DynamicProperties_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protocol_DynamicProperties_descriptor,
         new java.lang.String[] { "LastSolidityBlockNum", });
     internal_static_protocol_DisconnectMessage_descriptor =
-      getDescriptor().getMessageTypes().get(27);
+      getDescriptor().getMessageTypes().get(28);
     internal_static_protocol_DisconnectMessage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protocol_DisconnectMessage_descriptor,
         new java.lang.String[] { "Reason", });
     internal_static_protocol_HelloMessage_descriptor =
-      getDescriptor().getMessageTypes().get(28);
+      getDescriptor().getMessageTypes().get(29);
     internal_static_protocol_HelloMessage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protocol_HelloMessage_descriptor,
@@ -61216,7 +62257,7 @@ public final class Protocol {
         internal_static_protocol_HelloMessage_BlockId_descriptor,
         new java.lang.String[] { "Hash", "Number", });
     internal_static_protocol_SmartContract_descriptor =
-      getDescriptor().getMessageTypes().get(29);
+      getDescriptor().getMessageTypes().get(30);
     internal_static_protocol_SmartContract_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protocol_SmartContract_descriptor,
@@ -61240,7 +62281,7 @@ public final class Protocol {
         internal_static_protocol_SmartContract_ABI_Entry_Param_descriptor,
         new java.lang.String[] { "Indexed", "Name", "Type", });
     internal_static_protocol_InternalTransaction_descriptor =
-      getDescriptor().getMessageTypes().get(30);
+      getDescriptor().getMessageTypes().get(31);
     internal_static_protocol_InternalTransaction_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protocol_InternalTransaction_descriptor,
@@ -61252,13 +62293,13 @@ public final class Protocol {
         internal_static_protocol_InternalTransaction_CallValueInfo_descriptor,
         new java.lang.String[] { "CallValue", "TokenId", });
     internal_static_protocol_DelegatedResourceAccountIndex_descriptor =
-      getDescriptor().getMessageTypes().get(31);
+      getDescriptor().getMessageTypes().get(32);
     internal_static_protocol_DelegatedResourceAccountIndex_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protocol_DelegatedResourceAccountIndex_descriptor,
         new java.lang.String[] { "Account", "FromAccounts", "ToAccounts", });
     internal_static_protocol_NodeInfo_descriptor =
-      getDescriptor().getMessageTypes().get(32);
+      getDescriptor().getMessageTypes().get(33);
     internal_static_protocol_NodeInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protocol_NodeInfo_descriptor,

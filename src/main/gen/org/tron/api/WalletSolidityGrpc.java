@@ -667,6 +667,166 @@ public final class WalletSolidityGrpc {
      }
      return getGenerateAddressMethod;
   }
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getGetMerkleTreeVoucherInfoMethod()} instead. 
+  public static final io.grpc.MethodDescriptor<org.tron.protos.Contract.OutputPointInfo,
+      org.tron.protos.Contract.IncrementalMerkleVoucherInfo> METHOD_GET_MERKLE_TREE_VOUCHER_INFO = getGetMerkleTreeVoucherInfoMethod();
+
+  private static volatile io.grpc.MethodDescriptor<org.tron.protos.Contract.OutputPointInfo,
+      org.tron.protos.Contract.IncrementalMerkleVoucherInfo> getGetMerkleTreeVoucherInfoMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<org.tron.protos.Contract.OutputPointInfo,
+      org.tron.protos.Contract.IncrementalMerkleVoucherInfo> getGetMerkleTreeVoucherInfoMethod() {
+    io.grpc.MethodDescriptor<org.tron.protos.Contract.OutputPointInfo, org.tron.protos.Contract.IncrementalMerkleVoucherInfo> getGetMerkleTreeVoucherInfoMethod;
+    if ((getGetMerkleTreeVoucherInfoMethod = WalletSolidityGrpc.getGetMerkleTreeVoucherInfoMethod) == null) {
+      synchronized (WalletSolidityGrpc.class) {
+        if ((getGetMerkleTreeVoucherInfoMethod = WalletSolidityGrpc.getGetMerkleTreeVoucherInfoMethod) == null) {
+          WalletSolidityGrpc.getGetMerkleTreeVoucherInfoMethod = getGetMerkleTreeVoucherInfoMethod = 
+              io.grpc.MethodDescriptor.<org.tron.protos.Contract.OutputPointInfo, org.tron.protos.Contract.IncrementalMerkleVoucherInfo>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "protocol.WalletSolidity", "GetMerkleTreeVoucherInfo"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.tron.protos.Contract.OutputPointInfo.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.tron.protos.Contract.IncrementalMerkleVoucherInfo.getDefaultInstance()))
+                  .setSchemaDescriptor(new WalletSolidityMethodDescriptorSupplier("GetMerkleTreeVoucherInfo"))
+                  .build();
+          }
+        }
+     }
+     return getGetMerkleTreeVoucherInfoMethod;
+  }
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getScanNoteByIvkMethod()} instead. 
+  public static final io.grpc.MethodDescriptor<org.tron.api.GrpcAPI.IvkDecryptParameters,
+      org.tron.api.GrpcAPI.DecryptNotes> METHOD_SCAN_NOTE_BY_IVK = getScanNoteByIvkMethod();
+
+  private static volatile io.grpc.MethodDescriptor<org.tron.api.GrpcAPI.IvkDecryptParameters,
+      org.tron.api.GrpcAPI.DecryptNotes> getScanNoteByIvkMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<org.tron.api.GrpcAPI.IvkDecryptParameters,
+      org.tron.api.GrpcAPI.DecryptNotes> getScanNoteByIvkMethod() {
+    io.grpc.MethodDescriptor<org.tron.api.GrpcAPI.IvkDecryptParameters, org.tron.api.GrpcAPI.DecryptNotes> getScanNoteByIvkMethod;
+    if ((getScanNoteByIvkMethod = WalletSolidityGrpc.getScanNoteByIvkMethod) == null) {
+      synchronized (WalletSolidityGrpc.class) {
+        if ((getScanNoteByIvkMethod = WalletSolidityGrpc.getScanNoteByIvkMethod) == null) {
+          WalletSolidityGrpc.getScanNoteByIvkMethod = getScanNoteByIvkMethod = 
+              io.grpc.MethodDescriptor.<org.tron.api.GrpcAPI.IvkDecryptParameters, org.tron.api.GrpcAPI.DecryptNotes>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "protocol.WalletSolidity", "ScanNoteByIvk"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.tron.api.GrpcAPI.IvkDecryptParameters.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.tron.api.GrpcAPI.DecryptNotes.getDefaultInstance()))
+                  .setSchemaDescriptor(new WalletSolidityMethodDescriptorSupplier("ScanNoteByIvk"))
+                  .build();
+          }
+        }
+     }
+     return getScanNoteByIvkMethod;
+  }
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getScanAndMarkNoteByIvkMethod()} instead. 
+  public static final io.grpc.MethodDescriptor<org.tron.api.GrpcAPI.IvkDecryptAndMarkParameters,
+      org.tron.api.GrpcAPI.DecryptNotesMarked> METHOD_SCAN_AND_MARK_NOTE_BY_IVK = getScanAndMarkNoteByIvkMethod();
+
+  private static volatile io.grpc.MethodDescriptor<org.tron.api.GrpcAPI.IvkDecryptAndMarkParameters,
+      org.tron.api.GrpcAPI.DecryptNotesMarked> getScanAndMarkNoteByIvkMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<org.tron.api.GrpcAPI.IvkDecryptAndMarkParameters,
+      org.tron.api.GrpcAPI.DecryptNotesMarked> getScanAndMarkNoteByIvkMethod() {
+    io.grpc.MethodDescriptor<org.tron.api.GrpcAPI.IvkDecryptAndMarkParameters, org.tron.api.GrpcAPI.DecryptNotesMarked> getScanAndMarkNoteByIvkMethod;
+    if ((getScanAndMarkNoteByIvkMethod = WalletSolidityGrpc.getScanAndMarkNoteByIvkMethod) == null) {
+      synchronized (WalletSolidityGrpc.class) {
+        if ((getScanAndMarkNoteByIvkMethod = WalletSolidityGrpc.getScanAndMarkNoteByIvkMethod) == null) {
+          WalletSolidityGrpc.getScanAndMarkNoteByIvkMethod = getScanAndMarkNoteByIvkMethod = 
+              io.grpc.MethodDescriptor.<org.tron.api.GrpcAPI.IvkDecryptAndMarkParameters, org.tron.api.GrpcAPI.DecryptNotesMarked>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "protocol.WalletSolidity", "ScanAndMarkNoteByIvk"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.tron.api.GrpcAPI.IvkDecryptAndMarkParameters.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.tron.api.GrpcAPI.DecryptNotesMarked.getDefaultInstance()))
+                  .setSchemaDescriptor(new WalletSolidityMethodDescriptorSupplier("ScanAndMarkNoteByIvk"))
+                  .build();
+          }
+        }
+     }
+     return getScanAndMarkNoteByIvkMethod;
+  }
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getScanNoteByOvkMethod()} instead. 
+  public static final io.grpc.MethodDescriptor<org.tron.api.GrpcAPI.OvkDecryptParameters,
+      org.tron.api.GrpcAPI.DecryptNotes> METHOD_SCAN_NOTE_BY_OVK = getScanNoteByOvkMethod();
+
+  private static volatile io.grpc.MethodDescriptor<org.tron.api.GrpcAPI.OvkDecryptParameters,
+      org.tron.api.GrpcAPI.DecryptNotes> getScanNoteByOvkMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<org.tron.api.GrpcAPI.OvkDecryptParameters,
+      org.tron.api.GrpcAPI.DecryptNotes> getScanNoteByOvkMethod() {
+    io.grpc.MethodDescriptor<org.tron.api.GrpcAPI.OvkDecryptParameters, org.tron.api.GrpcAPI.DecryptNotes> getScanNoteByOvkMethod;
+    if ((getScanNoteByOvkMethod = WalletSolidityGrpc.getScanNoteByOvkMethod) == null) {
+      synchronized (WalletSolidityGrpc.class) {
+        if ((getScanNoteByOvkMethod = WalletSolidityGrpc.getScanNoteByOvkMethod) == null) {
+          WalletSolidityGrpc.getScanNoteByOvkMethod = getScanNoteByOvkMethod = 
+              io.grpc.MethodDescriptor.<org.tron.api.GrpcAPI.OvkDecryptParameters, org.tron.api.GrpcAPI.DecryptNotes>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "protocol.WalletSolidity", "ScanNoteByOvk"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.tron.api.GrpcAPI.OvkDecryptParameters.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.tron.api.GrpcAPI.DecryptNotes.getDefaultInstance()))
+                  .setSchemaDescriptor(new WalletSolidityMethodDescriptorSupplier("ScanNoteByOvk"))
+                  .build();
+          }
+        }
+     }
+     return getScanNoteByOvkMethod;
+  }
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getIsSpendMethod()} instead. 
+  public static final io.grpc.MethodDescriptor<org.tron.api.GrpcAPI.NoteParameters,
+      org.tron.api.GrpcAPI.SpendResult> METHOD_IS_SPEND = getIsSpendMethod();
+
+  private static volatile io.grpc.MethodDescriptor<org.tron.api.GrpcAPI.NoteParameters,
+      org.tron.api.GrpcAPI.SpendResult> getIsSpendMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<org.tron.api.GrpcAPI.NoteParameters,
+      org.tron.api.GrpcAPI.SpendResult> getIsSpendMethod() {
+    io.grpc.MethodDescriptor<org.tron.api.GrpcAPI.NoteParameters, org.tron.api.GrpcAPI.SpendResult> getIsSpendMethod;
+    if ((getIsSpendMethod = WalletSolidityGrpc.getIsSpendMethod) == null) {
+      synchronized (WalletSolidityGrpc.class) {
+        if ((getIsSpendMethod = WalletSolidityGrpc.getIsSpendMethod) == null) {
+          WalletSolidityGrpc.getIsSpendMethod = getIsSpendMethod = 
+              io.grpc.MethodDescriptor.<org.tron.api.GrpcAPI.NoteParameters, org.tron.api.GrpcAPI.SpendResult>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "protocol.WalletSolidity", "IsSpend"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.tron.api.GrpcAPI.NoteParameters.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.tron.api.GrpcAPI.SpendResult.getDefaultInstance()))
+                  .setSchemaDescriptor(new WalletSolidityMethodDescriptorSupplier("IsSpend"))
+                  .build();
+          }
+        }
+     }
+     return getIsSpendMethod;
+  }
 
   /**
    * Creates a new async stub that supports all call types for the service
@@ -850,6 +1010,41 @@ public final class WalletSolidityGrpc {
       asyncUnimplementedUnaryCall(getGenerateAddressMethod(), responseObserver);
     }
 
+    /**
+     */
+    public void getMerkleTreeVoucherInfo(org.tron.protos.Contract.OutputPointInfo request,
+        io.grpc.stub.StreamObserver<org.tron.protos.Contract.IncrementalMerkleVoucherInfo> responseObserver) {
+      asyncUnimplementedUnaryCall(getGetMerkleTreeVoucherInfoMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void scanNoteByIvk(org.tron.api.GrpcAPI.IvkDecryptParameters request,
+        io.grpc.stub.StreamObserver<org.tron.api.GrpcAPI.DecryptNotes> responseObserver) {
+      asyncUnimplementedUnaryCall(getScanNoteByIvkMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void scanAndMarkNoteByIvk(org.tron.api.GrpcAPI.IvkDecryptAndMarkParameters request,
+        io.grpc.stub.StreamObserver<org.tron.api.GrpcAPI.DecryptNotesMarked> responseObserver) {
+      asyncUnimplementedUnaryCall(getScanAndMarkNoteByIvkMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void scanNoteByOvk(org.tron.api.GrpcAPI.OvkDecryptParameters request,
+        io.grpc.stub.StreamObserver<org.tron.api.GrpcAPI.DecryptNotes> responseObserver) {
+      asyncUnimplementedUnaryCall(getScanNoteByOvkMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void isSpend(org.tron.api.GrpcAPI.NoteParameters request,
+        io.grpc.stub.StreamObserver<org.tron.api.GrpcAPI.SpendResult> responseObserver) {
+      asyncUnimplementedUnaryCall(getIsSpendMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -992,6 +1187,41 @@ public final class WalletSolidityGrpc {
                 org.tron.api.GrpcAPI.EmptyMessage,
                 org.tron.api.GrpcAPI.AddressPrKeyPairMessage>(
                   this, METHODID_GENERATE_ADDRESS)))
+          .addMethod(
+            getGetMerkleTreeVoucherInfoMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                org.tron.protos.Contract.OutputPointInfo,
+                org.tron.protos.Contract.IncrementalMerkleVoucherInfo>(
+                  this, METHODID_GET_MERKLE_TREE_VOUCHER_INFO)))
+          .addMethod(
+            getScanNoteByIvkMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                org.tron.api.GrpcAPI.IvkDecryptParameters,
+                org.tron.api.GrpcAPI.DecryptNotes>(
+                  this, METHODID_SCAN_NOTE_BY_IVK)))
+          .addMethod(
+            getScanAndMarkNoteByIvkMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                org.tron.api.GrpcAPI.IvkDecryptAndMarkParameters,
+                org.tron.api.GrpcAPI.DecryptNotesMarked>(
+                  this, METHODID_SCAN_AND_MARK_NOTE_BY_IVK)))
+          .addMethod(
+            getScanNoteByOvkMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                org.tron.api.GrpcAPI.OvkDecryptParameters,
+                org.tron.api.GrpcAPI.DecryptNotes>(
+                  this, METHODID_SCAN_NOTE_BY_OVK)))
+          .addMethod(
+            getIsSpendMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                org.tron.api.GrpcAPI.NoteParameters,
+                org.tron.api.GrpcAPI.SpendResult>(
+                  this, METHODID_IS_SPEND)))
           .build();
     }
   }
@@ -1188,6 +1418,46 @@ public final class WalletSolidityGrpc {
       asyncUnaryCall(
           getChannel().newCall(getGenerateAddressMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void getMerkleTreeVoucherInfo(org.tron.protos.Contract.OutputPointInfo request,
+        io.grpc.stub.StreamObserver<org.tron.protos.Contract.IncrementalMerkleVoucherInfo> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getGetMerkleTreeVoucherInfoMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void scanNoteByIvk(org.tron.api.GrpcAPI.IvkDecryptParameters request,
+        io.grpc.stub.StreamObserver<org.tron.api.GrpcAPI.DecryptNotes> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getScanNoteByIvkMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void scanAndMarkNoteByIvk(org.tron.api.GrpcAPI.IvkDecryptAndMarkParameters request,
+        io.grpc.stub.StreamObserver<org.tron.api.GrpcAPI.DecryptNotesMarked> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getScanAndMarkNoteByIvkMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void scanNoteByOvk(org.tron.api.GrpcAPI.OvkDecryptParameters request,
+        io.grpc.stub.StreamObserver<org.tron.api.GrpcAPI.DecryptNotes> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getScanNoteByOvkMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void isSpend(org.tron.api.GrpcAPI.NoteParameters request,
+        io.grpc.stub.StreamObserver<org.tron.api.GrpcAPI.SpendResult> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getIsSpendMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -1361,6 +1631,41 @@ public final class WalletSolidityGrpc {
     public org.tron.api.GrpcAPI.AddressPrKeyPairMessage generateAddress(org.tron.api.GrpcAPI.EmptyMessage request) {
       return blockingUnaryCall(
           getChannel(), getGenerateAddressMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public org.tron.protos.Contract.IncrementalMerkleVoucherInfo getMerkleTreeVoucherInfo(org.tron.protos.Contract.OutputPointInfo request) {
+      return blockingUnaryCall(
+          getChannel(), getGetMerkleTreeVoucherInfoMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public org.tron.api.GrpcAPI.DecryptNotes scanNoteByIvk(org.tron.api.GrpcAPI.IvkDecryptParameters request) {
+      return blockingUnaryCall(
+          getChannel(), getScanNoteByIvkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public org.tron.api.GrpcAPI.DecryptNotesMarked scanAndMarkNoteByIvk(org.tron.api.GrpcAPI.IvkDecryptAndMarkParameters request) {
+      return blockingUnaryCall(
+          getChannel(), getScanAndMarkNoteByIvkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public org.tron.api.GrpcAPI.DecryptNotes scanNoteByOvk(org.tron.api.GrpcAPI.OvkDecryptParameters request) {
+      return blockingUnaryCall(
+          getChannel(), getScanNoteByOvkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public org.tron.api.GrpcAPI.SpendResult isSpend(org.tron.api.GrpcAPI.NoteParameters request) {
+      return blockingUnaryCall(
+          getChannel(), getIsSpendMethod(), getCallOptions(), request);
     }
   }
 
@@ -1556,6 +1861,46 @@ public final class WalletSolidityGrpc {
       return futureUnaryCall(
           getChannel().newCall(getGenerateAddressMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<org.tron.protos.Contract.IncrementalMerkleVoucherInfo> getMerkleTreeVoucherInfo(
+        org.tron.protos.Contract.OutputPointInfo request) {
+      return futureUnaryCall(
+          getChannel().newCall(getGetMerkleTreeVoucherInfoMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<org.tron.api.GrpcAPI.DecryptNotes> scanNoteByIvk(
+        org.tron.api.GrpcAPI.IvkDecryptParameters request) {
+      return futureUnaryCall(
+          getChannel().newCall(getScanNoteByIvkMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<org.tron.api.GrpcAPI.DecryptNotesMarked> scanAndMarkNoteByIvk(
+        org.tron.api.GrpcAPI.IvkDecryptAndMarkParameters request) {
+      return futureUnaryCall(
+          getChannel().newCall(getScanAndMarkNoteByIvkMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<org.tron.api.GrpcAPI.DecryptNotes> scanNoteByOvk(
+        org.tron.api.GrpcAPI.OvkDecryptParameters request) {
+      return futureUnaryCall(
+          getChannel().newCall(getScanNoteByOvkMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<org.tron.api.GrpcAPI.SpendResult> isSpend(
+        org.tron.api.GrpcAPI.NoteParameters request) {
+      return futureUnaryCall(
+          getChannel().newCall(getIsSpendMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_GET_ACCOUNT = 0;
@@ -1578,6 +1923,11 @@ public final class WalletSolidityGrpc {
   private static final int METHODID_GET_TRANSACTION_BY_ID = 17;
   private static final int METHODID_GET_TRANSACTION_INFO_BY_ID = 18;
   private static final int METHODID_GENERATE_ADDRESS = 19;
+  private static final int METHODID_GET_MERKLE_TREE_VOUCHER_INFO = 20;
+  private static final int METHODID_SCAN_NOTE_BY_IVK = 21;
+  private static final int METHODID_SCAN_AND_MARK_NOTE_BY_IVK = 22;
+  private static final int METHODID_SCAN_NOTE_BY_OVK = 23;
+  private static final int METHODID_IS_SPEND = 24;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1676,6 +2026,26 @@ public final class WalletSolidityGrpc {
           serviceImpl.generateAddress((org.tron.api.GrpcAPI.EmptyMessage) request,
               (io.grpc.stub.StreamObserver<org.tron.api.GrpcAPI.AddressPrKeyPairMessage>) responseObserver);
           break;
+        case METHODID_GET_MERKLE_TREE_VOUCHER_INFO:
+          serviceImpl.getMerkleTreeVoucherInfo((org.tron.protos.Contract.OutputPointInfo) request,
+              (io.grpc.stub.StreamObserver<org.tron.protos.Contract.IncrementalMerkleVoucherInfo>) responseObserver);
+          break;
+        case METHODID_SCAN_NOTE_BY_IVK:
+          serviceImpl.scanNoteByIvk((org.tron.api.GrpcAPI.IvkDecryptParameters) request,
+              (io.grpc.stub.StreamObserver<org.tron.api.GrpcAPI.DecryptNotes>) responseObserver);
+          break;
+        case METHODID_SCAN_AND_MARK_NOTE_BY_IVK:
+          serviceImpl.scanAndMarkNoteByIvk((org.tron.api.GrpcAPI.IvkDecryptAndMarkParameters) request,
+              (io.grpc.stub.StreamObserver<org.tron.api.GrpcAPI.DecryptNotesMarked>) responseObserver);
+          break;
+        case METHODID_SCAN_NOTE_BY_OVK:
+          serviceImpl.scanNoteByOvk((org.tron.api.GrpcAPI.OvkDecryptParameters) request,
+              (io.grpc.stub.StreamObserver<org.tron.api.GrpcAPI.DecryptNotes>) responseObserver);
+          break;
+        case METHODID_IS_SPEND:
+          serviceImpl.isSpend((org.tron.api.GrpcAPI.NoteParameters) request,
+              (io.grpc.stub.StreamObserver<org.tron.api.GrpcAPI.SpendResult>) responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -1757,6 +2127,11 @@ public final class WalletSolidityGrpc {
               .addMethod(getGetTransactionByIdMethod())
               .addMethod(getGetTransactionInfoByIdMethod())
               .addMethod(getGenerateAddressMethod())
+              .addMethod(getGetMerkleTreeVoucherInfoMethod())
+              .addMethod(getScanNoteByIvkMethod())
+              .addMethod(getScanAndMarkNoteByIvkMethod())
+              .addMethod(getScanNoteByOvkMethod())
+              .addMethod(getIsSpendMethod())
               .build();
         }
       }
